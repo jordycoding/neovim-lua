@@ -38,3 +38,5 @@ map('n', '<leader>t', '<cmd>TroubleToggle<CR>')
 
 -- Symbols
 map('n', '<leader>s', '<cmd>SymbolsOutline<CR>')
+
+
