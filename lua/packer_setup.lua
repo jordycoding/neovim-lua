@@ -67,6 +67,7 @@ return require('packer').startup(function()
     }
 
     -- UI stuff/other plugins
+    use 'feline-nvim/feline.nvim'
     use 'folke/which-key.nvim' 
     use 'stevearc/dressing.nvim'
     use 'ggandor/lightspeed.nvim'
@@ -98,5 +99,11 @@ return require('packer').startup(function()
         config = function()
             require('zen-mode').setup()
         end
+    }
+    use {
+        'norcalli/nvim-colorize.lua',
+        config = function()
+            require('colorizer').setup()
+        end 
     }
 )

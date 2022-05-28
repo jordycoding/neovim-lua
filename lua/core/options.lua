@@ -22,3 +22,8 @@ opt.expandtab = true
 opt.nu = true
 opt.autoindent = true
 opt.nohsearch = true
+
+vim.api.nvim_command([[
+autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
+autocmd FileType scss setl iskeyword+=@-@
+]])
