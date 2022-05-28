@@ -21,7 +21,8 @@ opt.shiftwidth = 4
 opt.expandtab = true
 opt.nu = true
 opt.autoindent = true
-g.nohlsearch = true
+opt.hlsearch = false
+opt.foldenable = false
 
 vim.api.nvim_command([[
 autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
