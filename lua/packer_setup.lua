@@ -33,6 +33,7 @@ return require('packer').startup(function()
             require('gitsigns').setup()
         end
     }
+
     use {
         'pwntester/octo.nvim',
         config = function()
@@ -48,8 +49,9 @@ return require('packer').startup(function()
             'hrsh7th/nvim-cmp',
             'hrsh7th/cmp-nvim-lsp-signature-help',
             'onsails/lspkind-nvim',
-            'hrsh7th/vim-vnsip',
-            'hrsh7h/cmp-vsnip',
+            'hrsh7th/vim-vsnip',
+            'hrsh7th/vim-vsnip-integ',
+            'hrsh7th/cmp-vsnip',
             'hrsh7th/cmp-nvim-lsp',
             'jose-elias-alvarez/null-ls.nvim',
             'rafamadriz/friendly-snippets',
@@ -69,6 +71,7 @@ return require('packer').startup(function()
         'folke/trouble.nvim',
         config = function()
             require('trouble').setup()
+        end
     }
     use 'simrat39/symbols-outline.nvim'
     use {
@@ -87,7 +90,7 @@ return require('packer').startup(function()
     use 'ThePrimeagen/harpoon'
     use 'inside/vim-search-pulse'
     use {
-        'rcarriga/nvim-notfiy',
+        'rcarriga/nvim-notify',
         config = function()
             vim.notify = require('notify')
         end
@@ -113,9 +116,9 @@ return require('packer').startup(function()
         end
     }
     use {
-        'norcalli/nvim-colorize.lua',
+        'norcalli/nvim-colorizer.lua',
         config = function()
             require('colorizer').setup()
         end 
     }
-)
+end)
