@@ -2,6 +2,7 @@
 require('core/options')
 require('packer_setup')
 require('core/keymaps')
+require('core/colors')
 require('plugins/nvim-tree')
 require('plugins/bufferline')
 require('plugins/lsp')

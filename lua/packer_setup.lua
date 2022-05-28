@@ -15,7 +15,7 @@ return require('packer').startup(function()
                 integrations = {
                     lsp_trouble = true,
                     which_key = true,
-                    ligtspeed = true
+                    lightspeed = true
                 }
             })
         end
