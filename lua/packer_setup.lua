@@ -7,7 +7,19 @@ return require('packer').startup(function()
     use 'nvim-telescope/telescope.nvim'
 
     -- Color scheme
-    use 'catppuccin/nvim'
+    use {
+        'catppuccin/nvim',
+        as = 'catppuccin',
+        config = function()
+            require('catppuccin').setup({
+                integrations = {
+                    lsp_trouble = true,
+                    which_key = true,
+                    ligtspeed = true
+                }
+            })
+        end
+    }
 
     -- Sidebar
     use 'kyazdani42/nvim-web-devicons'
