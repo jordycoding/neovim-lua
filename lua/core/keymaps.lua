@@ -8,7 +8,7 @@ end
 
 vim.g.mapleader = ' '
 
--- Telescope
+-- Harpoon
 
 map('n', '<silent><leader>ha', ':lua require(\'harpoon.mark\').add_file()<CR>')
 map('n', '<silent><leader>hc', ':lua require(\'harpoon.mark\').clear_all()<CR>')
@@ -28,3 +28,13 @@ map('n', '<leader>gg', ':G<CR>')
 map('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
 map('n', '<leader>fa', '<cmd>Telescope commands<CR>')
 map('n', '<leader>ft', '<cmd>Telescope builtin<CR>')
+map('n', '<leader>fb', '<cmd>Telescope buffers<CR>')
+
+-- Zen mode
+map('n', '<leader>z', '<cmd>ZenMode<CR>')
+
+-- Trouble
+map('n', '<leader>t', '<cmd>TroubleToggle<CR>')
+
+-- Symbols
+map('n', '<leader>s', '<cmd>SymbolsOutline<CR>')
