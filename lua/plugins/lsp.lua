@@ -169,7 +169,7 @@ require('lspconfig')['java_language_server'].setup {
 }
 require('lspconfig')['tsserver'].setup {
     on_attach = function(client)
-        client.resolved_capabilities.document_formatting = false
+        client.server_capabilities.document_formatting = false
     end,
 }
 
