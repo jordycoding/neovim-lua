@@ -5,6 +5,11 @@ return require('packer').startup(function()
     -- Telescope
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
+    
+    -- Alpha(dashboard)
+    use {
+        'goolord/alpha-nvim',
+    }
 
     -- Color scheme
     use {
