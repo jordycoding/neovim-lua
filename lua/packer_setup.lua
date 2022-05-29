@@ -15,7 +15,11 @@ return require('packer').startup(function()
                 integrations = {
                     lsp_trouble = true,
                     which_key = true,
-                    lightspeed = true
+                    lightspeed = true,
+                    indent_blankline = {
+                        enabled = true,
+                        colored_indent_levels = true,
+                    },  
                 }
             })
         end
@@ -121,4 +125,7 @@ return require('packer').startup(function()
             require('colorizer').setup()
         end 
     }
+    use 'tpope/vim-surround'
+    use 'lukas-reineke/indent-blankline.nvim'
+    use 'tpope/vim-obsession'
 end)
