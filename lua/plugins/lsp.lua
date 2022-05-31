@@ -2,38 +2,6 @@ local cmp = require'cmp'
 local lspkind = require'lspkind'
 local configs = require'lspconfig.configs'
 
-if not configs.ls_emmet then
-  configs.ls_emmet = {
-    default_config = {
-      cmd = { 'ls_emmet', '--stdio' };
-      filetypes = {
-        'html',
-        'css',
-        'scss',
-        'javascript',
-        'javascriptreact',
-        'typescript',
-        'typescriptreact',
-        'haml',
-        'xml',
-        'xsl',
-        'pug',
-        'slim',
-        'sass',
-        'stylus',
-        'less',
-        'sss',
-        'hbs',
-        'handlebars',
-      };
-      root_dir = function(fname)
-        return vim.loop.cwd()
-      end;
-      settings = {};
-    };
-  }
-end
-
   cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
@@ -67,7 +35,7 @@ end
     }),
     formatting = {
         format = lspkind.cmp_format({
-            mode = 'symbol',
+            mode = 'text_symbol',
             maxwidth = 50,
             before = function(entry, vim_item)
                 return vim_item
