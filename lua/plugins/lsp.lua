@@ -1,6 +1,8 @@
 local cmp = require'cmp'
+local lspconfig = require'lspconfig'
 local lspkind = require'lspkind'
 local configs = require'lspconfig.configs'
+local lspconfig_util = require'lspconfig.util'
 
   cmp.setup({
     snippet = {
@@ -101,6 +103,119 @@ for _, lsp in pairs(servers) do
   }
 end
 
+-- Vue stuff
+local volar_cmd = {'vue-language-server', '--stdio'}
+local volar_root_dir = lspconfig_util.root_pattern 'package.json'
+
+local function on_new_config(new_config, new_root_dir)
+  local function get_typescript_server_path(root_dir)
+    local project_root = lspconfig_util.find_node_modules_ancestor(root_dir)
+    return project_root and (lspconfig_util.path.join(project_root, 'node_modules', 'typescript', 'lib', 'tsserverlibrary.js'))
+      or ''
+  end
+
+  if
+    new_config.init_options
+    and new_config.init_options.typescript
+    and new_config.init_options.typescript.serverPath == ''
+  then
+    new_config.init_options.typescript.serverPath = get_typescript_server_path(new_root_dir)
+  end
+end
+
+configs.volar_api = {
+  default_config = {
+    cmd = volar_cmd,
+    root_dir = volar_root_dir,
+    on_new_config = on_new_config,
+    filetypes = { 'vue'},
+    -- If you want to use Volar's Take Over Mode (if you know, you know)
+    --filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+    init_options = {
+      typescript = {
+        serverPath = ''
+      },
+      languageFeatures = {
+        implementation = true, -- new in @volar/vue-language-server v0.33
+        references = true,
+        definition = true,
+        typeDefinition = true,
+        callHierarchy = true,
+        hover = true,
+        rename = true,
+        renameFileRefactoring = true,
+        signatureHelp = true,
+        codeAction = true,
+        workspaceSymbol = true,
+        completion = {
+          defaultTagNameCase = 'both',
+          defaultAttrNameCase = 'kebabCase',
+          getDocumentNameCasesRequest = false,
+          getDocumentSelectionRequest = false,
+        },
+      }
+    },
+  }
+}
+lspconfig.volar_api.setup{}
+
+configs.volar_doc = {
+  default_config = {
+    cmd = volar_cmd,
+    root_dir = volar_root_dir,
+    on_new_config = on_new_config,
+
+    filetypes = { 'vue'},
+    -- If you want to use Volar's Take Over Mode (if you know, you know):
+    --filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+    init_options = {
+      typescript = {
+        serverPath = ''
+      },
+      languageFeatures = {
+        implementation = true, -- new in @volar/vue-language-server v0.33
+        documentHighlight = true,
+        documentLink = true,
+        codeLens = { showReferencesNotification = true},
+        -- not supported - https://github.com/neovim/neovim/pull/15723
+        semanticTokens = false,
+        diagnostics = true,
+        schemaRequestService = true,
+      }
+    },
+  }
+}
+lspconfig.volar_doc.setup{}
+
+configs.volar_html = {
+  default_config = {
+    cmd = volar_cmd,
+    root_dir = volar_root_dir,
+    on_new_config = on_new_config,
+
+    filetypes = { 'vue'},
+    -- If you want to use Volar's Take Over Mode (if you know, you know), intentionally no 'json':
+    --filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+    init_options = {
+      typescript = {
+        serverPath = ''
+      },
+      documentFeatures = {
+        selectionRange = true,
+        foldingRange = true,
+        linkedEditingRange = true,
+        documentSymbol = true,
+        -- not supported - https://github.com/neovim/neovim/pull/13654
+        documentColor = false,
+        documentFormatting = {
+          defaultPrintWidth = 100,
+        },
+      }
+    },
+  }
+}
+lspconfig.volar_html.setup{}
+
 -- Icons in gutter for linting
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
@@ -136,7 +251,66 @@ require('lspconfig')['java_language_server'].setup {
     cmd = {'/home/jordy/java-language-server/dist/lang_server_linux.sh'}
 }
 require('lspconfig')['tsserver'].setup {
-    on_attach = function(client)
+    init_options = require("nvim-lsp-ts-utils").init_options,
+    on_attach = function(client, bufnr)
+        local ts_utils = require("nvim-lsp-ts-utils")
+
+        -- defaults
+        ts_utils.setup({
+            debug = false,
+            disable_commands = false,
+            enable_import_on_completion = false,
+
+            -- import all
+            import_all_timeout = 5000, -- ms
+            -- lower numbers = higher priority
+            import_all_priorities = {
+                same_file = 1, -- add to existing import statement
+                local_files = 2, -- git files or files with relative path markers
+                buffer_content = 3, -- loaded buffer content
+                buffers = 4, -- loaded buffer names
+            },
+            import_all_scan_buffers = 100,
+            import_all_select_source = false,
+            -- if false will avoid organizing imports
+            always_organize_imports = true,
+
+            -- filter diagnostics
+            filter_out_diagnostics_by_severity = {},
+            filter_out_diagnostics_by_code = {},
+
+            -- inlay hints
+            auto_inlay_hints = false,
+            inlay_hints_highlight = "Comment",
+            inlay_hints_priority = 200, -- priority of the hint extmarks
+            inlay_hints_throttle = 150, -- throttle the inlay hint request
+            inlay_hints_format = { -- format options for individual hint kind
+                Type = {},
+                Parameter = {},
+                Enum = {},
+                -- Example format customization for `Type` kind:
+                -- Type = {
+                --     highlight = "Comment",
+                --     text = function(text)
+                --         return "->" .. text:sub(2)
+                --     end,
+                -- },
+            },
+
+            -- update imports on file move
+            update_imports_on_move = false,
+            require_confirmation_on_move = false,
+            watch_dir = nil,
+        })
+
+        -- required to fix code action ranges and filter diagnostics
+        ts_utils.setup_client(client)
+
+        -- no default maps, so you may want to define some here
+        local opts = { silent = true }
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", opts)
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", opts)
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
         client.server_capabilities.document_formatting = false
     end,
 }
