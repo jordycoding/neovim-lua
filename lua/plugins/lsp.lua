@@ -3,6 +3,7 @@ local lspconfig = require'lspconfig'
 local lspkind = require'lspkind'
 local configs = require'lspconfig.configs'
 local lspconfig_util = require'lspconfig.util'
+local pid = vim.fn.getpid()
 
   cmp.setup({
     snippet = {
@@ -91,7 +92,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'tsserver', 'pyright', 'csharp_ls', 'bashls', 'ansiblels', 'rnix', 'rust_analyzer' }
+local servers = { 'tsserver', 'pyright', 'bashls', 'ansiblels', 'rnix', 'rust_analyzer' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
@@ -102,6 +103,12 @@ for _, lsp in pairs(servers) do
     capabilities = capabilities
   }
 end
+
+-- C# stuff
+local omnisharp_bin = "/usr/bin/omnisharp"
+require('lspconfig')['omnisharp'].setup({
+    cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) };
+})
 
 -- Vue stuff
 local volar_cmd = {'vue-language-server', '--stdio'}
