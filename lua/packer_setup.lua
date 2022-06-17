@@ -135,7 +135,7 @@ return require('packer').startup(function()
     use 'lukas-reineke/indent-blankline.nvim'
     use 'tpope/vim-obsession'
     use {
-        'AcksID/nvim-neoclip.lua',
+        'AckslD/nvim-neoclip.lua',
         config = function()
             require('neoclip').setup()
         end
