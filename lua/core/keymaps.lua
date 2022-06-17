@@ -29,6 +29,7 @@ map('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
 map('n', '<leader>fa', '<cmd>Telescope commands<CR>')
 map('n', '<leader>ft', '<cmd>Telescope builtin<CR>')
 map('n', '<leader>fb', '<cmd>Telescope buffers<CR>')
+map('n', '<leader>fy', '<cmd>Telescope neoclip<CR>')
 
 -- Zen mode
 map('n', '<leader>z', '<cmd>ZenMode<CR>')
@@ -38,5 +39,3 @@ map('n', '<leader>t', '<cmd>TroubleToggle<CR>')
 
 -- Symbols
 map('n', '<leader>s', '<cmd>SymbolsOutline<CR>')
-
-
