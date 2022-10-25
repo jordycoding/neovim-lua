@@ -1,3 +1,5 @@
+local ctp_feline = require('catppuccin.groups.integrations.feline')
+
 require('feline').setup({
-    components = require('catppuccin.core.integrations.feline')
+    components = ctp_feline.get(),
 })

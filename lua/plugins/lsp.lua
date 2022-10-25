@@ -50,7 +50,7 @@ local pid = vim.fn.getpid()
     }
   })
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -92,7 +92,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'tsserver', 'pyright', 'bashls', 'ansiblels', 'rnix', 'rust_analyzer' }
+local servers = { 'tsserver', 'pyright', 'bashls', 'ansiblels', 'rnix', 'rust_analyzer', 'jdtls' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
@@ -254,9 +254,6 @@ vim.diagnostic.config({
     update_in_insert = true,
 })
 
-require('lspconfig')['java_language_server'].setup {
-    cmd = {'/home/jordy/java-language-server/dist/lang_server_linux.sh'}
-}
 require('lspconfig')['tsserver'].setup {
     init_options = require("nvim-lsp-ts-utils").init_options,
     on_attach = function(client, bufnr)
@@ -330,4 +327,15 @@ null_ls.setup({
         null_ls.builtins.formatting.prettier,
     },
     on_attach = on_attach
+})
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+    pattern = "*",
+    callback = function()
+        package.loaded["feline"] = nil
+        package.loaded["catppuccin.groups.integrations.feline"] = nil
+        require("feline").setup {
+            components = require("catppuccin.groups.integrations.feline").get(),
+        }
+    end,
 })
