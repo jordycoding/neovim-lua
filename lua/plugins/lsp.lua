@@ -3,6 +3,7 @@ local lspconfig = require'lspconfig'
 local lspkind = require'lspkind'
 local configs = require'lspconfig.configs'
 local lspconfig_util = require'lspconfig.util'
+local navic = require'nvim-navic'
 local pid = vim.fn.getpid()
 
   cmp.setup({
@@ -87,6 +88,9 @@ local on_attach = function(client, bufnr)
             autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
         augroup END
         ]])
+    end
+    if client.server_capabilities.documentSymbolProvider then
+        navic.attach(client, bufnr)
     end
 end
 
