@@ -68,6 +68,9 @@ return require('packer').startup(function()
         },
     }
 
+    -- Java
+    use 'mfussenegger/nvim-jdtls'
+
     -- Treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
