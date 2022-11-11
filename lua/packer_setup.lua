@@ -98,7 +98,12 @@ return require('packer').startup(function()
     use 'feline-nvim/feline.nvim'
     use 'folke/which-key.nvim' 
     use 'stevearc/dressing.nvim'
-    use 'ggandor/leap.nvim'
+    use {
+        'ggandor/leap.nvim',
+        config = function()
+            require('leap').add_default_mappings()
+        end
+    }
     use 'akinsho/bufferline.nvim'
     use 'ThePrimeagen/harpoon'
     use 'inside/vim-search-pulse'
