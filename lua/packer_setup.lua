@@ -20,7 +20,8 @@ return require('packer').startup(function()
                 integrations = {
                     lsp_trouble = true,
                     which_key = true,
-                    lightspeed = true,
+                    leap = true,
+                    harpoon = true,
                     indent_blankline = {
                         enabled = true,
                         colored_indent_levels = true,
@@ -68,6 +69,9 @@ return require('packer').startup(function()
         },
     }
 
+    -- Java
+    use 'mfussenegger/nvim-jdtls'
+
     -- Treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -95,10 +99,24 @@ return require('packer').startup(function()
     use 'feline-nvim/feline.nvim'
     use 'folke/which-key.nvim' 
     use 'stevearc/dressing.nvim'
-    use 'ggandor/lightspeed.nvim'
+    use {
+        'ggandor/leap.nvim',
+        config = function()
+            require('leap').add_default_mappings()
+        end
+    }
     use 'akinsho/bufferline.nvim'
     use 'ThePrimeagen/harpoon'
     use 'inside/vim-search-pulse'
+    use {
+        'SmiteshP/nvim-navic',
+        requires = "neovim/nvim-lspconfig",
+        config = function()
+            require("nvim-navic").setup {
+                highlight = true
+            }
+        end
+    }
     use {
         'rcarriga/nvim-notify',
         config = function()

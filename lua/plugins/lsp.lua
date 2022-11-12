@@ -3,6 +3,7 @@ local lspconfig = require'lspconfig'
 local lspkind = require'lspkind'
 local configs = require'lspconfig.configs'
 local lspconfig_util = require'lspconfig.util'
+local navic = require'nvim-navic'
 local pid = vim.fn.getpid()
 
   cmp.setup({
@@ -88,11 +89,14 @@ local on_attach = function(client, bufnr)
         augroup END
         ]])
     end
+    if client.server_capabilities.documentSymbolProvider then
+        navic.attach(client, bufnr)
+    end
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'tsserver', 'pyright', 'bashls', 'ansiblels', 'rnix', 'rust_analyzer', 'jdtls' }
+local servers = { 'tsserver', 'pyright', 'bashls', 'ansiblels', 'rnix', 'rust_analyzer' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
