@@ -10,9 +10,9 @@ vim.g.mapleader = ' '
 
 -- Harpoon
 
-map('n', '<silent><leader>ha', ':lua require(\'harpoon.mark\').add_file()<CR>')
-map('n', '<silent><leader>hc', ':lua require(\'harpoon.mark\').clear_all()<CR>')
-map('n', '<silent><leader>ht', ':lua require(\'harpoon.ui\').toggle_quick_menu()<CR>')
+map('n', '<leader>ha', ':lua require(\'harpoon.mark\').add_file()<CR>')
+map('n', '<leader>hc', ':lua require(\'harpoon.mark\').clear_all()<CR>')
+map('n', '<leader>ht', ':lua require(\'harpoon.ui\').toggle_quick_menu()<CR>')
 map('n', '<C-a>', ':lua require(\'harpoon.ui\').nav_file(1)<CR>')
 map('n', '<C-s>', ':lua require(\'harpoon.ui\').nav_file(2)<CR>')
 map('n', '<C-d>', ':lua require(\'harpoon.ui\').nav_file(3)<CR>')

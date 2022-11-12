@@ -21,6 +21,7 @@ return require('packer').startup(function()
                     lsp_trouble = true,
                     which_key = true,
                     leap = true,
+                    harpoon = true,
                     indent_blankline = {
                         enabled = true,
                         colored_indent_levels = true,
