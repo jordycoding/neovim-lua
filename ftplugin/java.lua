@@ -1,7 +1,5 @@
 local opts = { noremap=true, silent=true }
 local navic = require'nvim-navic'
-local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local workspace_dir = '/path/to/workspace-root/' .. project_name    
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
