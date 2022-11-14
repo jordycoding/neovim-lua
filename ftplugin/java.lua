@@ -1,5 +1,8 @@
 local opts = { noremap=true, silent=true }
 local navic = require'nvim-navic'
+local home = os.getenv('HOME')
+local workspace_folder = home .. "/.workspace" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -25,7 +28,7 @@ end
 
 local config = {
     on_attach = on_attach,
-    cmd = {'jdt-language-server'},
+    cmd = {'jdt-language-server', '-data', workspace_folder},
     root_dir = vim.fs.dirname(vim.fs.find({'.gradlew', '.git', 'mvnw'}, { upward = true })[1]),
 }
 require('jdtls').start_or_attach(config)
