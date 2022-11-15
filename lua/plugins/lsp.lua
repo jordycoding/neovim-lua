@@ -85,7 +85,7 @@ local on_attach = function(client, bufnr)
         vim.cmd([[
         augroup LspFormatting
             autocmd! * <buffer>
-            autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+            autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ async = true })
         augroup END
         ]])
     end
@@ -356,6 +356,7 @@ null_ls.setup({
         null_ls.builtins.diagnostics.checkstyle.with({
           extra_args = { "-c", "/google_checks.xml" }, -- or "/sun_checks.xml" or path to self written rules
         }),
+        null_ls.builtins.formatting.google_java_format,
     },
     on_attach = on_attach
 })
