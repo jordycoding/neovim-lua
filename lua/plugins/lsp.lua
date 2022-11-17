@@ -32,10 +32,11 @@ local pid = vim.fn.getpid()
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = 'vsnip' }, -- For vsnip users.
-      { name = 'nvim_lsp_signature_help'}
+      { name = 'nvim_lsp_signature_help'},
       -- { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
+      { name = "path" }
     }, {
       { name = 'buffer' },
     }),

@@ -66,6 +66,7 @@ return require('packer').startup(function()
             'jose-elias-alvarez/null-ls.nvim',
             'rafamadriz/friendly-snippets',
             'jose-elias-alvarez/nvim-lsp-ts-utils',
+            'hrsh7th/cmp-path',
         },
     }
     use {
