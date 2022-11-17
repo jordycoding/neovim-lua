@@ -115,7 +115,12 @@ return require("packer").startup(function()
 
 	-- UI stuff/other plugins
 	use("feline-nvim/feline.nvim")
-	use("folke/which-key.nvim")
+	use({
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup({})
+		end,
+	})
 	use("stevearc/dressing.nvim")
 	use({
 		"ggandor/leap.nvim",
