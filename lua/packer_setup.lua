@@ -68,6 +68,14 @@ return require('packer').startup(function()
             'jose-elias-alvarez/nvim-lsp-ts-utils',
         },
     }
+    use {
+            'mrshmllow/document-color.nvim',
+            config = function ()
+                require("document-color").setup {
+                    mode = "background"
+                }
+            end
+    }
 
     -- Java
     use 'mfussenegger/nvim-jdtls'
