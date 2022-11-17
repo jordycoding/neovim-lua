@@ -4,8 +4,8 @@ local opt = vim.opt
 -----------
 -- General
 -----------
-opt.mouse = 'a'
-g.mapleader = ' '
+opt.mouse = "a"
+g.mapleader = " "
 
 -----------
 -- UI

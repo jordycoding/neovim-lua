@@ -1,6 +1,6 @@
-require('bufferline').setup({
-   options = {
-        mode = "tabs",
-        offsets = {{filetype="NvimTree", text=""}}
-    }
+require("bufferline").setup({
+	options = {
+		mode = "tabs",
+		offsets = { { filetype = "NvimTree", text = "" } },
+	},
 })

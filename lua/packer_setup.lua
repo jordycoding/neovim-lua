@@ -1,11 +1,11 @@
 return require('packer').startup(function()
     -- Let packer manage itself
     use 'wbthomason/packer.nvim'
-  
+
     -- Telescope
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
-    
+
     -- Alpha(dashboard)
     use {
         'goolord/alpha-nvim',
@@ -25,7 +25,7 @@ return require('packer').startup(function()
                     indent_blankline = {
                         enabled = true,
                         colored_indent_levels = true,
-                    },  
+                    },
                 }
             })
         end
@@ -34,7 +34,7 @@ return require('packer').startup(function()
     -- Sidebar
     use 'kyazdani42/nvim-web-devicons'
     use 'kyazdani42/nvim-tree.lua'
-    
+
     -- Git(hub) integrations
     use 'tpope/vim-fugitive'
     use {
@@ -70,12 +70,12 @@ return require('packer').startup(function()
         },
     }
     use {
-            'mrshmllow/document-color.nvim',
-            config = function ()
-                require("document-color").setup {
-                    mode = "background"
-                }
-            end
+        'mrshmllow/document-color.nvim',
+        config = function()
+            require("document-color").setup {
+                mode = "background"
+            }
+        end
     }
 
     -- Java
@@ -106,7 +106,7 @@ return require('packer').startup(function()
 
     -- UI stuff/other plugins
     use 'feline-nvim/feline.nvim'
-    use 'folke/which-key.nvim' 
+    use 'folke/which-key.nvim'
     use 'stevearc/dressing.nvim'
     use {
         'ggandor/leap.nvim',
@@ -156,7 +156,7 @@ return require('packer').startup(function()
         'norcalli/nvim-colorizer.lua',
         config = function()
             require('colorizer').setup()
-        end 
+        end
     }
     use 'tpope/vim-surround'
     use 'lukas-reineke/indent-blankline.nvim'
