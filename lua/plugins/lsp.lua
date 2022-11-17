@@ -58,6 +58,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 capabilities.textDocument.colorProvider = {
     dynamicRegistration = true
 }
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -105,7 +106,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'tsserver', 'pyright', 'bashls', 'ansiblels', 'nil_ls', 'rust_analyzer', 'tailwindcss', 'cssls' }
+local servers = { 'tsserver', 'pyright', 'bashls', 'ansiblels', 'nil_ls', 'rust_analyzer', 'tailwindcss', 'cssls', 'html' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
