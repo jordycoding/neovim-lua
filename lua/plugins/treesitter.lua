@@ -19,4 +19,9 @@ require("nvim-treesitter.configs").setup({
 			node_decremental = "<S-TAB>",
 		},
 	},
+	rainbow = {
+		enable = true,
+		extended_mode = true,
+		max_file_lines = nil,
+	},
 })
