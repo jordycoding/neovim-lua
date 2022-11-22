@@ -97,6 +97,7 @@ return require("packer").startup(function()
 	use("nvim-treesitter/playground")
 	use("windwp/nvim-ts-autotag")
 	use("p00f/nvim-ts-rainbow")
+    use("nvim-treesitter/nvim-treesitter-context")
 
 	-- IDE functions
 	use({
