@@ -374,6 +374,7 @@ null_ls.setup({
             extra_args = { "-c", "/google_checks.xml" }, -- or "/sun_checks.xml" or path to self written rules
         }),
         null_ls.builtins.formatting.google_java_format,
+        null_ls.builtins.formatting.csharpier,
     },
     on_attach = on_attach,
 })
