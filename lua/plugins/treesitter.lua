@@ -17,7 +17,9 @@ require("nvim-treesitter.configs").setup({
 		"php",
 		"python",
 		"yaml",
-        "nix",
+		"nix",
+		"svelte",
+		"yaml",
 	},
 	highlight = {
 		enable = true,
