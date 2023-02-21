@@ -100,8 +100,14 @@ return require("lazy").setup({
 		},
 	},
 	{
-		"mrshmllow/document-color.nvim",
-		opts = { mode = "background" },
+		"roobert/tailwindcss-colorizer-cmp.nvim",
+		opts = {
+			color_square_width = 2,
+		},
+	},
+	{
+		"NvChad/nvim-colorizer.lua",
+		config = true,
 	},
 
 	-- Java
