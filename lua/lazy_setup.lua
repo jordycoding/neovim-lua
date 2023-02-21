@@ -31,6 +31,7 @@ return require("lazy").setup({
 					which_key = true,
 					leap = true,
 					harpoon = true,
+                    fidget = true,
 					cmp = true,
 					native_lsp = {
 						enabled = true,
@@ -108,6 +109,14 @@ return require("lazy").setup({
 	{
 		"NvChad/nvim-colorizer.lua",
 		config = true,
+	},
+	{
+		"j-hui/fidget.nvim",
+		opts = {
+			window = {
+				blend = 0,
+			},
+		},
 	},
 
 	-- Java
