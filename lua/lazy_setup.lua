@@ -31,7 +31,7 @@ return require("lazy").setup({
 					which_key = true,
 					leap = true,
 					harpoon = true,
-                    fidget = true,
+					fidget = true,
 					cmp = true,
 					native_lsp = {
 						enabled = true,
@@ -116,6 +116,18 @@ return require("lazy").setup({
 			window = {
 				blend = 0,
 			},
+		},
+	},
+	{
+		"utilyre/barbecue.nvim",
+		name = "barbecue",
+		version = "*",
+		dependencies = {
+			"SmiteshP/nvim-navic",
+			"nvim-tree/nvim-web-devicons",
+		},
+		opts = {
+			theme = "catppuccin",
 		},
 	},
 
