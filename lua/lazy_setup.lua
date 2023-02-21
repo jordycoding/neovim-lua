@@ -65,8 +65,8 @@ return require("lazy").setup({
 	},
 
 	-- Sidebar
-	"kyazdani42/nvim-web-devicons",
-	"kyazdani42/nvim-tree.lua",
+	"nvim-tree/nvim-web-devicons",
+	"nvim-tree/nvim-tree.lua",
 
 	-- Git(hub) integrations
 	"tpope/vim-fugitive",
