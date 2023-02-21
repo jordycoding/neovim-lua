@@ -112,11 +112,13 @@ return require("lazy").setup({
 	},
 	{
 		"j-hui/fidget.nvim",
-		opts = {
-			window = {
-				blend = 0,
-			},
-		},
+		config = function()
+			require("fidget").setup({
+				window = {
+					blend = 0,
+				},
+			})
+		end,
 	},
 	{
 		"utilyre/barbecue.nvim",
