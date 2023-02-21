@@ -115,7 +115,7 @@ return require("lazy").setup({
 		config = function()
 			require("fidget").setup({
 				window = {
-					blend = 0,
+					blend = 100,
 				},
 			})
 		end,
