@@ -31,6 +31,22 @@ return require("lazy").setup({
 					which_key = true,
 					leap = true,
 					harpoon = true,
+					cmp = true,
+					native_lsp = {
+						enabled = true,
+						virtual_text = {
+							errors = { "italic" },
+							hints = { "italic" },
+							warnings = { "italic" },
+							information = { "italic" },
+						},
+						underlines = {
+							errors = { "underline" },
+							hints = { "underline" },
+							warnings = { "underline" },
+							information = { "underline" },
+						},
+					},
 					indent_blankline = {
 						enabled = true,
 						colored_indent_levels = true,
@@ -113,7 +129,18 @@ return require("lazy").setup({
 	},
 
 	-- UI stuff/other plugins
-	"feline-nvim/feline.nvim",
+	-- "feline-nvim/feline.nvim",
+	{
+		"nvim-lualine/lualine.nvim",
+		config = function()
+			require("lualine").setup({
+				options = {
+					theme = "catppuccin",
+					-- ... the rest of your lualine config
+				},
+			})
+		end,
+	},
 	{
 		"folke/which-key.nvim",
 		config = true,
