@@ -207,10 +207,6 @@ return require("lazy").setup({
 		},
 		config = true,
 	},
-	{
-		"norcalli/nvim-colorizer.lua",
-		config = true,
-	},
 	"tpope/vim-surround",
 	"lukas-reineke/indent-blankline.nvim",
 	"tpope/vim-obsession",
