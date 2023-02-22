@@ -125,6 +125,7 @@ local servers = {
 	"docker_compose_language_service",
 	"dockerls",
 	"svelte",
+    "ltex-ls"
 }
 for _, lsp in pairs(servers) do
 	require("lspconfig")[lsp].setup({
