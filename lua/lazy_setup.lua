@@ -214,6 +214,7 @@ return require("lazy").setup({
 		config = true,
 	},
 	"tpope/vim-surround",
+    "tpope/vim-abolish",
 	"lukas-reineke/indent-blankline.nvim",
 	"tpope/vim-obsession",
 	{
