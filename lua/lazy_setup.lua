@@ -214,9 +214,13 @@ return require("lazy").setup({
 		config = true,
 	},
 	"tpope/vim-surround",
-    "tpope/vim-abolish",
+	"tpope/vim-abolish",
 	"lukas-reineke/indent-blankline.nvim",
-	"tpope/vim-obsession",
+	"rmagatti/auto-session",
+	{
+		"rmagatti/session-lens",
+		config = true,
+	},
 	{
 		"AckslD/nvim-neoclip.lua",
 		config = true,
