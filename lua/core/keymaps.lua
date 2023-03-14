@@ -29,7 +29,7 @@ map("n", "<leader>ft", "<cmd>Telescope builtin<CR>")
 map("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
 map("n", "<leader>fy", "<cmd>Telescope neoclip<CR>")
 map("n", "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>")
-map("n", "<leader>fS", "<cmd>Telescope search_session<CR>")
+map("n", "<leader>fS", ":Telescope session-lens search_session<CR>")
 
 -- Zen mode
 map("n", "<leader>z", "<cmd>ZenMode<CR>")
