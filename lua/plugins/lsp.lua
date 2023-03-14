@@ -40,15 +40,30 @@ cmp.setup({
 	}, {
 		{ name = "buffer" },
 	}),
+	window = {
+		completion = {
+			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+			col_offset = -3,
+			side_padding = 0,
+		},
+	},
 	formatting = {
-		format = lspkind.cmp_format({
-			mode = "text_symbol",
-			maxwidth = 50,
-			before = function(entry, vim_item)
-				vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
-				return vim_item
-			end,
-		}),
+		fields = { "kind", "abbr", "menu" },
+		format = function(entry, vim_item)
+			local kind = require("lspkind").cmp_format({
+				mode = "symbol_text",
+				maxwidth = 50,
+				before = function(entry, vim_item)
+					vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
+					return vim_item
+				end,
+			})(entry, vim_item)
+			local strings = vim.split(kind.kind, "%s", { trimempty = true })
+			kind.kind = " " .. (strings[1] or "") .. " "
+			kind.menu = "    (" .. (strings[2] or "") .. ")"
+
+			return kind
+		end,
 	},
 	experimental = {
 		ghost_text = true,
@@ -207,7 +222,6 @@ configs.volar_doc = {
 		cmd = volar_cmd,
 		root_dir = volar_root_dir,
 		on_new_config = on_new_config,
-
 		filetypes = { "vue" },
 		-- If you want to use Volar's Take Over Mode (if you know, you know):
 		--filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
@@ -235,7 +249,6 @@ configs.volar_html = {
 		cmd = volar_cmd,
 		root_dir = volar_root_dir,
 		on_new_config = on_new_config,
-
 		filetypes = { "vue" },
 		-- If you want to use Volar's Take Over Mode (if you know, you know), intentionally no 'json':
 		--filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
@@ -321,7 +334,8 @@ require("lspconfig")["tsserver"].setup({
 			inlay_hints_highlight = "Comment",
 			inlay_hints_priority = 200, -- priority of the hint extmarks
 			inlay_hints_throttle = 150, -- throttle the inlay hint request
-			inlay_hints_format = { -- format options for individual hint kind
+			inlay_hints_format = {
+				-- format options for individual hint kind
 				Type = {},
 				Parameter = {},
 				Enum = {},
