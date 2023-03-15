@@ -62,6 +62,8 @@ return require("lazy").setup({
 				},
 				custom_highlights = function(C)
 					return {
+						PmenuSel = { bg = C.surface1, fg = "NONE" },
+						Pmenu = { fg = C.text, bg = C.surface0 },
 						CmpItemKindSnippet = { fg = C.base, bg = C.mauve },
 						CmpItemKindKeyword = { fg = C.base, bg = C.red },
 						CmpItemKindText = { fg = C.base, bg = C.teal },
