@@ -127,7 +127,6 @@ end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = {
-	"tsserver",
 	"pyright",
 	"bashls",
 	"ansiblels",
@@ -305,6 +304,11 @@ vim.diagnostic.config({
 
 require("lspconfig")["tsserver"].setup({
 	init_options = require("nvim-lsp-ts-utils").init_options,
+	flags = {
+		-- This will be the default in neovim 0.7+
+		debounce_text_changes = 150,
+	},
+	capabilities = capabilities,
 	on_attach = function(client, bufnr)
 		local ts_utils = require("nvim-lsp-ts-utils")
 
