@@ -128,7 +128,7 @@ return require("lazy").setup({
 			"hrsh7th/cmp-nvim-lsp",
 			"jose-elias-alvarez/null-ls.nvim",
 			"rafamadriz/friendly-snippets",
-			"jose-elias-alvarez/nvim-lsp-ts-utils",
+			"jose-elias-alvarez/typescript.nvim",
 			"hrsh7th/cmp-path",
 		},
 	},
