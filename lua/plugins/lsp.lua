@@ -353,6 +353,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.google_java_format,
 		null_ls.builtins.formatting.csharpier,
 		null_ls.builtins.formatting.phpcsfixer,
+		null_ls.builtins.formatting.black,
 		require("typescript.extensions.null-ls.code-actions"),
 	},
 	on_attach = on_attach,
