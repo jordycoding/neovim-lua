@@ -15,6 +15,7 @@ require("nvim-treesitter.configs").setup({
 		"bash",
 		"dockerfile",
 		"php",
+		"phpdoc",
 		"python",
 		"yaml",
 		"nix",
@@ -23,7 +24,7 @@ require("nvim-treesitter.configs").setup({
 	},
 	highlight = {
 		enable = true,
-		additional_vim_regex_highlighting = false,
+		additional_vim_regex_highlighting = { "php" },
 	},
 	playground = {
 		enable = true,
