@@ -135,7 +135,6 @@ local servers = {
 	"tailwindcss",
 	"cssls",
 	"html",
-	"phpactor",
 	"docker_compose_language_service",
 	"dockerls",
 	"svelte",
@@ -316,6 +315,15 @@ require("typescript").setup({
 	},
 })
 
+-- Yes a paid LSP, phpactor sucks
+require("lspconfig").intelephense.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	init_options = {
+		licenceKey = "$HOME/LICENSES/intelephense",
+	},
+})
+
 require("lspconfig").lua_ls.setup({
 	settings = {
 		Lua = {
@@ -343,7 +351,6 @@ require("lspconfig").lua_ls.setup({
 local null_ls = require("null-ls")
 null_ls.setup({
 	sources = {
-		null_ls.builtins.diagnostics.phpcs,
 		null_ls.builtins.formatting.prettier,
 		null_ls.builtins.formatting.nixpkgs_fmt,
 		null_ls.builtins.formatting.stylua,
@@ -352,7 +359,6 @@ null_ls.setup({
 		}),
 		null_ls.builtins.formatting.google_java_format,
 		null_ls.builtins.formatting.csharpier,
-		null_ls.builtins.formatting.phpcsfixer,
 		null_ls.builtins.formatting.black,
 		require("typescript.extensions.null-ls.code-actions"),
 	},
