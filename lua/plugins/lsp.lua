@@ -319,9 +319,6 @@ require("typescript").setup({
 require("lspconfig").intelephense.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	init_options = {
-		licenceKey = "$HOME/LICENSES/intelephense",
-	},
 })
 
 require("lspconfig").lua_ls.setup({
