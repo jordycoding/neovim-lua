@@ -46,3 +46,9 @@ map("n", "<leader>s", "<cmd>SymbolsOutline<CR>")
 
 -- Copy paste system clipboard
 map("v", "Y", '"+y')
+
+-- Spectre
+map("n", "<leader>S", '<cmd>lua require("spectre").open()<CR>')
+map("n", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>');
+map("v", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>');
+map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>');

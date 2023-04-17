@@ -260,6 +260,10 @@ return require("lazy").setup({
 		"AckslD/nvim-neoclip.lua",
 		config = true,
 	},
+	{
+		"nvim-pack/nvim-spectre",
+		dependencies = "nvim-lua/plenary.nvim",
+	},
 }, {
 	lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json", -- Config folder is readonly because of home manager
 })
