@@ -30,6 +30,10 @@ map("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
 map("n", "<leader>fy", "<cmd>Telescope neoclip<CR>")
 map("n", "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>")
 map("n", "<leader>fS", ":Telescope session-lens search_session<CR>")
+map("n", "<leader>fgb", "<cmd>Telescope git_branches<CR>")
+map("n", "<leader>fgc", "<cmd>Telescope git_commits<CR>")
+map("n", "<leader>fgs", "<cmd>Telescope git_stash<CR>")
+map("n", "<leader>fgS", "<cmd>Telescope git_status")
 
 -- Zen mode
 map("n", "<leader>z", "<cmd>ZenMode<CR>")
