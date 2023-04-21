@@ -5,6 +5,16 @@ local configs = require("lspconfig.configs")
 local lspconfig_util = require("lspconfig.util")
 local navic = require("nvim-navic")
 local pid = vim.fn.getpid()
+local types = require("cmp.types")
+
+local function deprioritize_snippet(entry1, entry2)
+	if entry1:get_kind() == types.lsp.CompletionItemKind.Snippet then
+		return false
+	end
+	if entry2:get_kind() == types.lsp.CompletionItemKind.Snippet then
+		return true
+	end
+end
 
 cmp.setup({
 	snippet = {
@@ -28,6 +38,23 @@ cmp.setup({
 			c = cmp.mapping.close(),
 		}),
 		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+	},
+	sorting = {
+		priority_weight = 2,
+		comparators = {
+			deprioritize_snippet,
+			-- the rest of the comparators are pretty much the defaults
+			cmp.config.compare.offset,
+			cmp.config.compare.exact,
+			cmp.config.compare.scopes,
+			cmp.config.compare.score,
+			cmp.config.compare.recently_used,
+			cmp.config.compare.locality,
+			cmp.config.compare.kind,
+			cmp.config.compare.sort_text,
+			cmp.config.compare.length,
+			cmp.config.compare.order,
+		},
 	},
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
@@ -140,9 +167,9 @@ local servers = {
 	"svelte",
 	"texlab",
 	"eslint",
-    "prismals",
-    "angularls",
-    "emmet_ls"
+	"prismals",
+	"angularls",
+	"emmet_ls",
 }
 for _, lsp in pairs(servers) do
 	require("lspconfig")[lsp].setup({
