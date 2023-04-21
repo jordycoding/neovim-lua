@@ -141,7 +141,8 @@ local servers = {
 	"texlab",
 	"eslint",
     "prismals",
-    "angularls"
+    "angularls",
+    "emmet_ls"
 }
 for _, lsp in pairs(servers) do
 	require("lspconfig")[lsp].setup({
