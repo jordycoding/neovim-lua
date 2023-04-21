@@ -140,7 +140,8 @@ local servers = {
 	"svelte",
 	"texlab",
 	"eslint",
-    "prismals"
+    "prismals",
+    "angularls"
 }
 for _, lsp in pairs(servers) do
 	require("lspconfig")[lsp].setup({
