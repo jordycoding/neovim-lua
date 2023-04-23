@@ -175,15 +175,21 @@ return require("lazy").setup({
 			"hrsh7th/nvim-cmp",
 			"hrsh7th/cmp-nvim-lsp-signature-help",
 			"onsails/lspkind-nvim",
-			"hrsh7th/vim-vsnip",
-			"hrsh7th/vim-vsnip-integ",
-			"hrsh7th/cmp-vsnip",
 			"hrsh7th/cmp-nvim-lsp",
 			"jose-elias-alvarez/null-ls.nvim",
-			"rafamadriz/friendly-snippets",
 			"jose-elias-alvarez/typescript.nvim",
 			"hrsh7th/cmp-path",
 		},
+	},
+	{
+		"L3MON4D3/LuaSnip",
+		dependencies = {
+			"saadparwaiz1/cmp_luasnip",
+			"rafamadriz/friendly-snippets",
+		},
+		config = function()
+			require("luasnip.loaders.from_vscode").lazy_load()
+		end,
 	},
 	{
 		"roobert/tailwindcss-colorizer-cmp.nvim",
