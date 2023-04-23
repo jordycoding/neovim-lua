@@ -72,10 +72,11 @@ cmp.setup({
 		},
 	},
 	sources = cmp.config.sources({
+		{ name = "copilot" },
 		{ name = "nvim_lsp" },
 		-- { name = "vsnip" }, -- For vsnip users.
 		{ name = "nvim_lsp_signature_help" },
-		{ name = 'luasnip' }, -- For luasnip users.
+		{ name = "luasnip" }, -- For luasnip users.
 		-- { name = 'ultisnips' }, -- For ultisnips users.
 		-- { name = 'snippy' }, -- For snippy users.
 		{ name = "path" },
@@ -95,6 +96,7 @@ cmp.setup({
 			local kind = require("lspkind").cmp_format({
 				mode = "symbol_text",
 				maxwidth = 50,
+				symbol_map = { Copilot = "" },
 				before = function(entry, vim_item)
 					vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
 					return vim_item
