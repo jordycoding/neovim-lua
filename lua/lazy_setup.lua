@@ -248,6 +248,36 @@ return require("lazy").setup({
 	-- Java
 	"mfussenegger/nvim-jdtls",
 
+	-- DAP
+	"mfussenegger/nvim-dap",
+	{
+		"rcarriga/nvim-dap-ui",
+		dependencies = {
+			"mfussenegger/nvim-dap",
+		},
+		config = true,
+	},
+	{
+		"theHamsta/nvim-dap-virtual-text",
+		dependencies = {
+			"mfussenegger/nvim-dap",
+		},
+		config = true,
+	},
+	{
+		"mfussenegger/nvim-dap-python",
+		dependencies = {
+			"mfussenegger/nvim-dap",
+		},
+	},
+	{
+		"mxsdev/nvim-dap-vscode-js",
+		dependencies = {
+			"mfussenegger/nvim-dap",
+		},
+	},
+	"simrat39/rust-tools.nvim",
+
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",

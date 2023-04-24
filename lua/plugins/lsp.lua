@@ -7,6 +7,7 @@ local navic = require("nvim-navic")
 local pid = vim.fn.getpid()
 local types = require("cmp.types")
 local luasnip = require("luasnip")
+local rt = require("rust-tools")
 
 local function deprioritize_snippet(entry1, entry2)
 	if entry1:get_kind() == types.lsp.CompletionItemKind.Snippet then
@@ -175,7 +176,6 @@ local servers = {
 	"bashls",
 	"ansiblels",
 	"nil_ls",
-	"rust_analyzer",
 	"tailwindcss",
 	"cssls",
 	"html",
@@ -389,6 +389,14 @@ require("lspconfig").lua_ls.setup({
 				enable = false,
 			},
 		},
+	},
+})
+
+rt.setup({
+	server = {
+		on_attach = function(_, bufnr)
+			vim.keymap.set("n", "<space>ca", rt.hover_actions.hover_actions, { buffer = bufnr })
+		end,
 	},
 })
 

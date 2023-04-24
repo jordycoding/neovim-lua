@@ -49,6 +49,16 @@ map("v", "Y", '"+y')
 
 -- Spectre
 map("n", "<leader>S", '<cmd>lua require("spectre").open()<CR>')
-map("n", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>');
-map("v", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>');
-map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>');
+map("n", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>')
+map("v", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>')
+map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>')
+
+-- DAP
+map("n", "<F5>", ":lua require('dap').continue()<CR>")
+map("n", "<F10>", ":lua require('dap').step_over()<CR>")
+map("n", "<F11>", ":lua require('dap').step_into()<CR>")
+map("n", "<F12>", ":lua require('dap').step_out()<CR>")
+map("n", "<leader>b", ":lua require('dap').toggle_breakpoint()<CR>")
+map("n", "<leader>B", ":lua require('dap').set_breakpoint()<CR>")
+map("n", "<leader>dr", ":lua require('dap').repl.open()<CR>")
+map("n", "<leader>du", ":lua require('dapui').toggle()")
