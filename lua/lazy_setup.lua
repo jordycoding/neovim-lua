@@ -59,6 +59,10 @@ return require("lazy").setup({
                         enabled = true,
                         custom_bg = "NONE",
                     },
+                    dap = {
+                        enabled = true,
+                        enable_ui = true
+                    }
                 },
                 custom_highlights = function(C)
                     return {
