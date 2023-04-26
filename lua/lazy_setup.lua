@@ -55,6 +55,7 @@ return require("lazy").setup({
 					treesitter = true,
 					treesitter_context = true,
 					ts_rainbow = true,
+					headlines = true,
 					navic = {
 						enabled = true,
 						custom_bg = "NONE",
@@ -308,7 +309,6 @@ return require("lazy").setup({
 	},
 
 	-- UI stuff/other plugins
-	-- "feline-nvim/feline.nvim",
 	{
 		"nvim-lualine/lualine.nvim",
 		config = function()
@@ -374,6 +374,11 @@ return require("lazy").setup({
 	{
 		"nvim-pack/nvim-spectre",
 		dependencies = "nvim-lua/plenary.nvim",
+	},
+	{
+		"lukas-reineke/headlines.nvim",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+		config = true, -- or `opts = {}`
 	},
 }, {
 	lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json", -- Config folder is readonly because of home manager
