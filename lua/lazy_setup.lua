@@ -26,6 +26,7 @@ return require("lazy").setup({
 		lazy = false,
 		config = function()
 			require("catppuccin").setup({
+				flavour = "mocha",
 				integrations = {
 					lsp_trouble = true,
 					which_key = true,
@@ -361,11 +362,16 @@ return require("lazy").setup({
 	},
 	"tpope/vim-surround",
 	"tpope/vim-abolish",
-	"lukas-reineke/indent-blankline.nvim",
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		opts = {
+			space_char_blankline = " ",
+			show_current_context = true,
+		},
+	},
 	"rmagatti/auto-session",
 	{
 		"rmagatti/session-lens",
-		config = true,
 	},
 	{
 		"AckslD/nvim-neoclip.lua",
