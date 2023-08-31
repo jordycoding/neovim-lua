@@ -392,6 +392,22 @@ require("lspconfig").lua_ls.setup({
 	},
 })
 
+local prettier = require("efm.prettier")
+local nixpkgs_fmt = require("efm.nixpkgs-fmt")
+require("lspconfig").efm.setup({
+	on_attach = on_attach,
+	init_options = { documentFormatting = true },
+	settings = {
+		languages = {
+			javascript = { prettier },
+			javascriptreact = { prettier },
+			typescript = { prettier },
+			typescriptreact = { prettier },
+			nix = { nixpkgs_fmt },
+		},
+	},
+})
+
 rt.setup({
 	server = {
 		on_attach = function(_, bufnr)
@@ -403,8 +419,6 @@ rt.setup({
 local null_ls = require("null-ls")
 null_ls.setup({
 	sources = {
-		null_ls.builtins.formatting.prettier,
-		null_ls.builtins.formatting.nixpkgs_fmt,
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.diagnostics.checkstyle.with({
 			extra_args = { "-c", "/google_checks.xml" }, -- or "/sun_checks.xml" or path to self written rules
