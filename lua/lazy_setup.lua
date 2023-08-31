@@ -187,6 +187,7 @@ return require("lazy").setup({
 			"hrsh7th/cmp-path",
 		},
 	},
+	"scalameta/nvim-metals",
 	{
 		"L3MON4D3/LuaSnip",
 		dependencies = {
