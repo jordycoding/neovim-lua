@@ -1,4 +1,4 @@
 return {
-    formatCommand = "nixpkgs-fmt ${INPUT}",
-    formatStdin = true
+	formatCommand = "nixpkgs-fmt",
+	formatStdin = true,
 }
