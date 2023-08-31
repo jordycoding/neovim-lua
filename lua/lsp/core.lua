@@ -392,8 +392,8 @@ require("lspconfig").lua_ls.setup({
 	},
 })
 
-local prettier = require("efm.prettier")
-local nixpkgs_fmt = require("efm.nixpkgs-fmt")
+local prettier = require("lsp.efm.prettier")
+local nixpkgs_fmt = require("lsp.efm.nixpkgs-fmt")
 require("lspconfig").efm.setup({
 	on_attach = on_attach,
 	init_options = { documentFormatting = true },
