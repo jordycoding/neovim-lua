@@ -349,19 +349,6 @@ vim.diagnostic.config({
     update_in_insert = true,
 })
 
-require("typescript").setup({
-    disable_commands = true, -- prevent the plugin from creating Vim commands, doing this via null_ls
-    debug = false,        -- enable debug logging for commands
-    go_to_source_definition = {
-        fallback = true,  -- fall back to standard LSP definition on failure
-    },
-    server = {
-        -- pass options to lspconfig's setup method
-        on_attach = on_attach,
-        capabilities = capabilities,
-    },
-})
-
 -- Yes a paid LSP, phpactor sucks
 require("lspconfig").intelephense.setup({
     on_attach = on_attach,
