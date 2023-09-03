@@ -182,12 +182,14 @@ return require("lazy").setup({
 			"hrsh7th/cmp-nvim-lsp-signature-help",
 			"onsails/lspkind-nvim",
 			"hrsh7th/cmp-nvim-lsp",
-			"jose-elias-alvarez/null-ls.nvim",
-			"jose-elias-alvarez/typescript.nvim",
 			"hrsh7th/cmp-path",
 		},
 	},
 	"scalameta/nvim-metals",
+	{
+		"pmizio/typescript-tools.nvim",
+		config = true,
+	},
 	{
 		"L3MON4D3/LuaSnip",
 		dependencies = {
