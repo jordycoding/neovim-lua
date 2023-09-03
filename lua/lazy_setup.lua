@@ -174,7 +174,6 @@ return require("lazy").setup({
 	"sindrets/diffview.nvim",
 
 	-- LSP
-	"folke/neoconf.nvim",
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
