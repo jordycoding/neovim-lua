@@ -414,6 +414,9 @@ rt.setup({
 
 local metals_config = require("metals").bare_config()
 metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
+metals_config.settings = {
+    useGlobalExecutable = true
+}
 local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
     -- NOTE: You may or may not want java included here. You will need it if you
