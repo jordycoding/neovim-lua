@@ -375,9 +375,9 @@ return require("lazy").setup({
     "tpope/vim-abolish",
     {
         "lukas-reineke/indent-blankline.nvim",
-        config = {
+        config = function()
             require("ibl").setup()
-        }
+        end
     },
     "rmagatti/auto-session",
     {
