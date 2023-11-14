@@ -155,15 +155,15 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opts)
-    if client.server_capabilities.documentFormattingProvider then
-        vim.cmd([[
-        augroup LspFormatting
-            autocmd! * <buffer>
-            autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ async = true })
-        augroup END
-        ]])
-    end
+    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opts)
+    -- if client.server_capabilities.documentFormattingProvider then
+    --     vim.cmd([[
+    --     augroup LspFormatting
+    --         autocmd! * <buffer>
+    --         autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ async = true })
+    --     augroup END
+    --     ]])
+    -- end
     if client.server_capabilities.documentSymbolProvider then
         navic.attach(client, bufnr)
     end
@@ -379,29 +379,16 @@ require("lspconfig").lua_ls.setup({
     },
 })
 
-local prettier = require("lsp.efm.prettier")
-local nixpkgs_fmt = require("lsp.efm.nixpkgs-fmt")
-local stylua = require("lsp.efm.stylua")
-local csharpier = require("lsp.efm.csharpier")
-local black = require("lsp.efm.black")
-local google = require("lsp.efm.google-java-format")
-
-require("lspconfig").efm.setup({
-    on_attach = on_attach,
-    init_options = { documentFormatting = true },
-    settings = {
-        languages = {
-            javascript = { prettier },
-            javascriptreact = { prettier },
-            typescript = { prettier },
-            typescriptreact = { prettier },
-            nix = { nixpkgs_fmt },
-            lua = { formatter = stylua },
-            cs = { csharpier },
-            python = { black },
-            java = { google }
-        },
-    },
+require("conform").setup({
+    formatters_by_ft = {
+        lua = { "stylua" },
+        python = { "black" },
+        javascript = { "prettier" },
+        javascriptreact = { "prettier" },
+        typescript = { "prettier" },
+        typescriptreact = { "prettier" },
+        nix = { "nixpkgs_fmt" }
+    }
 })
 
 rt.setup({
