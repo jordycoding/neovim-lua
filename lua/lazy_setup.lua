@@ -186,12 +186,6 @@ return require("lazy").setup({
     },
     {
         'stevearc/conform.nvim',
-        opts = {
-            format_on_save = {
-                timeout_ms = 500,
-                lsp_fallback = true
-            }
-        },
     },
     "scalameta/nvim-metals",
     {
@@ -226,9 +220,11 @@ return require("lazy").setup({
         "j-hui/fidget.nvim",
         config = function()
             require("fidget").setup({
-                window = {
-                    winblend = 100,
-                },
+                notification = {
+                    window = {
+                        winblend = 100,
+                    },
+                }
             })
         end,
     },
