@@ -363,7 +363,9 @@ return require("lazy").setup({
 	{
 		"giusgad/pets.nvim",
 		dependencies = { "MunifTanjim/nui.nvim", "giusgad/hologram.nvim" },
-		config = true,
+		opts = {
+			row = 7,
+		},
 	},
 	{
 		"folke/which-key.nvim",
