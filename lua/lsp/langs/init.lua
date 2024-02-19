@@ -1,0 +1,6 @@
+require("lsp.langs.generic")
+require("lsp.langs.csharp")
+require("lsp.langs.lua")
+require("lsp.langs.php")
+require("lsp.langs.rust")
+require("lsp.langs.vue")
