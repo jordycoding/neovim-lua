@@ -1,3 +1,4 @@
+local bufnr = vim.api.nvim_get_current_buf()
 local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type

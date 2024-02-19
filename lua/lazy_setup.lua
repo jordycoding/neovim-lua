@@ -289,7 +289,11 @@ return require("lazy").setup({
 			"mfussenegger/nvim-dap",
 		},
 	},
-	"simrat39/rust-tools.nvim",
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^4", -- Recommended
+		ft = { "rust" },
+	},
 
 	-- Treesitter
 	{
