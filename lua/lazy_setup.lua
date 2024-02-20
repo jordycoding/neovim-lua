@@ -55,7 +55,6 @@ return require("lazy").setup({
 					},
 					treesitter = true,
 					treesitter_context = true,
-					ts_rainbow = true,
 					headlines = true,
 					navic = {
 						enabled = true,
@@ -302,7 +301,6 @@ return require("lazy").setup({
 	},
 	"nvim-treesitter/playground",
 	"windwp/nvim-ts-autotag",
-	"p00f/nvim-ts-rainbow",
 	"nvim-treesitter/nvim-treesitter-context",
 	"nvim-treesitter/nvim-treesitter-textobjects",
 
