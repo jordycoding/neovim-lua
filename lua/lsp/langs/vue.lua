@@ -21,6 +21,7 @@ end
 
 require("lspconfig").volar.setup({
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+	root_pattern = util.root_pattern("src/App.vue"), -- So volar doesn't attach itself to regular ts/js projects
 	on_new_config = function(new_config, new_root_dir)
 		new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
 	end,
