@@ -21,6 +21,11 @@ map("n", "<leader>n", ":NvimTreeToggle<CR>")
 
 -- Fugitive
 map("n", "<leader>gg", ":G<CR>")
+map("n", "<leader>gp", ":G push<CR>")
+
+-- Worktree
+map("n", "<leader>fgw", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>")
+map("n", "<leader>gwc", ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>")
 
 -- Telescope
 map("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
