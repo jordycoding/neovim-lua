@@ -11,5 +11,6 @@ require("conform").setup({
 		typescript = { "prettier" },
 		typescriptreact = { "prettier" },
 		nix = { "nixpkgs_fmt" },
+		json = { "prettier" },
 	},
 })
