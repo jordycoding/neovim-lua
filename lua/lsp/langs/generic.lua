@@ -17,7 +17,6 @@ local servers = {
 	"angularls",
 	"emmet_ls",
 	"clangd",
-	"kotlin_language_server",
 }
 for _, lsp in pairs(servers) do
 	require("lspconfig")[lsp].setup({
