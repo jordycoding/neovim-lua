@@ -34,7 +34,7 @@ end
 
 local config = {
 	on_attach = on_attach,
-	cmd = { "jdt-language-server", "-data", workspace_folder },
+	cmd = { "jdtls", "-data", workspace_folder },
 	root_dir = vim.fs.dirname(vim.fs.find({ ".gradlew", ".git", "mvnw" }, { upward = true })[1]),
 }
 require("jdtls").start_or_attach(config)
