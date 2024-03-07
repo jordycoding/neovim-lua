@@ -1,7 +1,7 @@
 local opts = { noremap = true, silent = true }
 local navic = require("nvim-navic")
 local home = os.getenv("HOME")
-local workspace_folder = home .. "/.workspace" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+local workspace_folder = home .. "/.workspace/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 
 local on_attach = function(client, bufnr)
 	-- Enable completion triggered by <c-x><c-o>
@@ -35,6 +35,6 @@ end
 local config = {
 	on_attach = on_attach,
 	cmd = { "jdtls", "-data", workspace_folder },
-	root_dir = vim.fs.dirname(vim.fs.find({ ".gradlew", ".git", "mvnw" }, { upward = true })[1]),
+	root_dir = vim.fs.dirname(vim.fs.find({ ".gradlew", "mvnw" }, { upward = true })[1]),
 }
 require("jdtls").start_or_attach(config)
