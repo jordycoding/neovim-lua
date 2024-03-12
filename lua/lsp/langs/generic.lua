@@ -4,7 +4,6 @@ local servers = {
 	"pyright",
 	"bashls",
 	"ansiblels",
-	"nil_ls",
 	"tailwindcss",
 	"cssls",
 	"html",
@@ -17,6 +16,7 @@ local servers = {
 	"angularls",
 	"emmet_ls",
 	"clangd",
+	"nixd",
 }
 for _, lsp in pairs(servers) do
 	require("lspconfig")[lsp].setup({
