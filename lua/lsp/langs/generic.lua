@@ -4,7 +4,6 @@ local servers = {
 	"pyright",
 	"bashls",
 	"ansiblels",
-	"tailwindcss",
 	"cssls",
 	"html",
 	"docker_compose_language_service",
