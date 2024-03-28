@@ -78,5 +78,8 @@ return {
 		{
 			"mxsdev/nvim-dap-vscode-js",
 		},
+		{
+			"nvim-neotest/nvim-nio",
+		},
 	},
 }
