@@ -91,6 +91,7 @@ cmp.setup({
 				mode = "symbol_text",
 				maxwidth = 50,
 				symbol_map = { Copilot = "" },
+				before = require("tailwind-tools.cmp").lspkind_format,
 			})(entry, vim_item)
 			local strings = vim.split(kind.kind, "%s", { trimempty = true })
 			kind.kind = " " .. (strings[1] or "") .. " "
