@@ -16,6 +16,7 @@ local servers = {
 	"emmet_ls",
 	"clangd",
 	"nixd",
+	"gopls",
 }
 for _, lsp in pairs(servers) do
 	require("lspconfig")[lsp].setup({

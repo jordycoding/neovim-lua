@@ -28,5 +28,6 @@ require("conform").setup({
 		typescriptreact = { "prettier" },
 		nix = { "nixpkgs_fmt" },
 		json = { "prettier" },
+		go = { "goimports", "gofmt" },
 	},
 })
