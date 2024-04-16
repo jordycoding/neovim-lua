@@ -27,3 +27,4 @@ opt.hlsearch = false
 opt.foldenable = false
 opt.signcolumn = "yes"
 opt.scrolloff = 10
+opt.title = true
