@@ -6,8 +6,13 @@ local function map(mode, lhs, rhs, opts)
 	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
--- Harpoon
+-- Tabs
+map("n", "<tab>", ":tabnext<Return>")
+map("n", "<s-tab>", ":tabprev<Return>")
+map("n", "tw", ":tabclose<Return>")
+map("n", "te", ":tabedit<Return>")
 
+-- Harpoon
 map("n", "<leader>ha", ":lua require('harpoon.mark').add_file()<CR>")
 map("n", "<leader>hc", ":lua require('harpoon.mark').clear_all()<CR>")
 map("n", "<leader>ht", ":lua require('harpoon.ui').toggle_quick_menu()<CR>")

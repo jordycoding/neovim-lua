@@ -26,3 +26,4 @@ opt.cursorlineopt = "number"
 opt.hlsearch = false
 opt.foldenable = false
 opt.signcolumn = "yes"
+opt.scroloff = 10
