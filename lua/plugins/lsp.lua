@@ -14,7 +14,13 @@ return {
 	},
 	{
 		"pmizio/typescript-tools.nvim",
-		config = true,
+		opts = {
+			settings = {
+				tsserver_file_preferences = {
+					includeCompletionsForModuleExports = true,
+				},
+			},
+		},
 	},
 	{
 		"luckasRanarison/tailwind-tools.nvim",
