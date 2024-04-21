@@ -16,6 +16,9 @@ return {
 		"pmizio/typescript-tools.nvim",
 		opts = {
 			settings = {
+				tsserver_plugins = {
+					"@vue/typescript-plugin",
+				},
 				tsserver_file_preferences = {
 					includeCompletionsForModuleExports = true,
 				},
