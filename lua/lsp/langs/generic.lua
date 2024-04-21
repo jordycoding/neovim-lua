@@ -13,7 +13,7 @@ local servers = {
 	"eslint",
 	"prismals",
 	"angularls",
-	"emmet_ls",
+	"emmet_language_server",
 	"clangd",
 	"nixd",
 	"gopls",
