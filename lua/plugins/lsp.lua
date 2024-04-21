@@ -23,6 +23,13 @@ return {
 					includeCompletionsForModuleExports = true,
 				},
 			},
+			filetypes = {
+				"javascript",
+				"typescript",
+				"javascriptreact",
+				"typescriptreact",
+				"vue",
+			},
 		},
 	},
 	{
