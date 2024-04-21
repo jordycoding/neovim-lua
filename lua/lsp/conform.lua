@@ -29,5 +29,6 @@ require("conform").setup({
 		nix = { "nixpkgs_fmt" },
 		json = { "prettier" },
 		go = { "goimports", "gofmt" },
+		vue = { "prettier" },
 	},
 })
