@@ -1,4 +1,5 @@
 require("lsp.langs.generic")
+require("lsp.langs.typescript")
 require("lsp.langs.csharp")
 require("lsp.langs.lua")
 require("lsp.langs.php")

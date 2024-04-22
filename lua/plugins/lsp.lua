@@ -12,26 +12,26 @@ return {
 	{
 		"stevearc/conform.nvim",
 	},
-	{
-		"pmizio/typescript-tools.nvim",
-		opts = {
-			settings = {
-				tsserver_plugins = {
-					"@vue/typescript-plugin",
-				},
-				tsserver_file_preferences = {
-					includeCompletionsForModuleExports = true,
-				},
-			},
-			filetypes = {
-				"javascript",
-				"typescript",
-				"javascriptreact",
-				"typescriptreact",
-				"vue",
-			},
-		},
-	},
+	-- {
+	-- 	"pmizio/typescript-tools.nvim",
+	-- 	opts = {
+	-- 		settings = {
+	-- 			tsserver_plugins = {
+	-- 				"@vue/typescript-plugin",
+	-- 			},
+	-- 			tsserver_file_preferences = {
+	-- 				includeCompletionsForModuleExports = true,
+	-- 			},
+	-- 		},
+	-- 		filetypes = {
+	-- 			"javascript",
+	-- 			"typescript",
+	-- 			"javascriptreact",
+	-- 			"typescriptreact",
+	-- 			"vue",
+	-- 		},
+	-- 	},
+	-- },
 	{
 		"luckasRanarison/tailwind-tools.nvim",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
