@@ -9,4 +9,7 @@ return {
 		},
 		highlights = require("catppuccin.groups.integrations.bufferline").get(),
 	},
+	dependencies = {
+		"catppuccin/nvim",
+	},
 }
