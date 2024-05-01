@@ -1,3 +1,6 @@
+local harpoon = require("harpoon")
+harpoon:setup()
+
 local function map(mode, lhs, rhs, opts)
 	local options = { noremap = true, silent = true }
 	if opts then
@@ -13,13 +16,25 @@ map("n", "tw", ":tabclose<Return>")
 map("n", "te", ":tabedit<Return>")
 
 -- Harpoon
-map("n", "<leader>ha", ":lua require('harpoon.mark').add_file()<CR>")
-map("n", "<leader>hc", ":lua require('harpoon.mark').clear_all()<CR>")
-map("n", "<leader>ht", ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
-map("n", "<C-a>", ":lua require('harpoon.ui').nav_file(1)<CR>")
-map("n", "<C-s>", ":lua require('harpoon.ui').nav_file(2)<CR>")
-map("n", "<C-d>", ":lua require('harpoon.ui').nav_file(3)<CR>")
-map("n", "<C-f>", ":lua require('harpoon.ui').nav_file(4)<CR>")
+vim.keymap.set("n", "<leader>ha", function()
+	harpoon:list():add()
+end)
+-- map("n", "<leader>hc", ":lua require('harpoon.mark').clear_all()<CR>")
+vim.keymap.set("n", "<leader>ht", function()
+	harpoon.ui:toggle_quick_menu(harpoon:list())
+end)
+vim.keymap.set("n", "<C-a>", function()
+	harpoon:list():select(1)
+end)
+vim.keymap.set("n", "<C-s>", function()
+	harpoon:list():select(2)
+end)
+vim.keymap.set("n", "<C-d>", function()
+	harpoon:list():select(3)
+end)
+vim.keymap.set("n", "<C-f>", function()
+	harpoon:list():select(4)
+end)
 
 -- NvimTree
 map("n", "<leader>n", ":NvimTreeToggle<CR>")

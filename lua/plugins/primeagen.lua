@@ -1,5 +1,8 @@
 return {
-	"ThePrimeagen/harpoon",
 	"ThePrimeagen/git-worktree.nvim",
 	config = true,
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+	},
 }

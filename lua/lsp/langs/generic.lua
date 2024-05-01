@@ -12,7 +12,6 @@ local servers = {
 	"texlab",
 	"eslint",
 	"prismals",
-	"angularls",
 	"emmet_language_server",
 	"clangd",
 	"nixd",
