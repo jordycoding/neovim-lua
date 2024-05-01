@@ -1,15 +1,20 @@
 local confutil = require("lspconfig.util")
 local util = require("lsp.util")
 
-local project_library_path = confutil.root_pattern("angular.json") .. "/node_modules"
+local function getcmd(root_dir) 
+    found_nm = util.path.join(root_dir, "node_modules")
+return 
+	{ "ngserver", "--stdio", "--tsProbeLocations", found_nm "--ngProbeLocations", found_nm }
+end
+
 local cmd =
-	{ "ngserver", "--stdio", "--tsProbeLocations", project_library_path, "--ngProbeLocations", project_library_path }
+	{ "ngserver", "--stdio", "--tsProbeLocations", "$HOME/.npm-packages/lib", "--ngProbeLocations", "$HOME/.npm-packages/lib" }
 
 require("lspconfig").angularls.setup({
 	on_attach = util.on_attach,
 	capabilities = util.capabilities,
 	cmd = cmd,
 	on_new_config = function(new_config, new_root_dir)
-		new_config.cmd = cmd
+		new_config.cmd = getcmd(new_root_dir)
 	end,
 })
