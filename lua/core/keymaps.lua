@@ -87,3 +87,8 @@ map("n", "<leader>b", ":lua require('dap').toggle_breakpoint()<CR>")
 map("n", "<leader>B", ":lua require('dap').set_breakpoint()<CR>")
 map("n", "<leader>dr", ":lua require('dap').repl.open()<CR>")
 map("n", "<leader>du", ":lua require('dapui').toggle()<CR>")
+
+-- Neotest
+map("n", "<leader>Nn", ":lua require('neotest').run.run()<CR>")
+map("n", "<leader>Nf", ":lua require('neotest').run.run(vim.fn.expand(" % "))")
+map("n", "<leader>Nd", ":lua require('neotest').run.run(vim.fn.getcwd())")
