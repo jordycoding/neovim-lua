@@ -90,5 +90,5 @@ map("n", "<leader>du", ":lua require('dapui').toggle()<CR>")
 
 -- Neotest
 map("n", "<leader>Nn", ":lua require('neotest').run.run()<CR>")
-map("n", "<leader>Nf", ":lua require('neotest').run.run(vim.fn.expand(" % "))")
+map("n", "<leader>Nf", ":lua require('neotest').run.run(vim.fn.expand(' % ''))")
 map("n", "<leader>Nd", ":lua require('neotest').run.run(vim.fn.getcwd())")
