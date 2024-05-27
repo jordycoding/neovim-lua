@@ -30,5 +30,6 @@ require("conform").setup({
 		json = { "prettier" },
 		go = { "goimports", "gofmt" },
 		vue = { "prettier" },
+		latex = { "latexindent" },
 	},
 })
