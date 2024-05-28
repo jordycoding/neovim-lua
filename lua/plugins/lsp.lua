@@ -7,7 +7,10 @@ return {
 			"onsails/lspkind-nvim",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-path",
-			"folke/neoconf.nvim",
+			{
+				"folke/neoconf.nvim",
+				config = true,
+			},
 		},
 	},
 	{
