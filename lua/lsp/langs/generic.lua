@@ -17,6 +17,7 @@ local servers = {
 	"nixd",
 	"gopls",
 	"ltex",
+	"jsonls",
 }
 for _, lsp in pairs(servers) do
 	require("lspconfig")[lsp].setup({
