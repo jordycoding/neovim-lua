@@ -31,6 +31,7 @@ return {
 				"nix",
 				"svelte",
 				"yaml",
+				"dart",
 			},
 			highlight = {
 				enable = true,
