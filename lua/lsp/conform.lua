@@ -31,5 +31,6 @@ require("conform").setup({
 		go = { "goimports", "gofmt" },
 		vue = { "prettier" },
 		latex = { "latexindent" },
+		dart = { "dart_format" },
 	},
 })
