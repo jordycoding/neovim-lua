@@ -7,18 +7,25 @@ end
 
 -- Show line diagnostics in hover window
 vim.o.updatetime = 250
-vim.api.nvim_create_autocmd("CursorHold", {
-	buffer = bufnr,
+vim.api.nvim_create_autocmd({ "CursorHold" }, {
+	pattern = "*",
 	callback = function()
-		local opts = {
-			focusable = false,
-			close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-			border = "rounded",
-			source = "always",
-			prefix = " ",
+		for _, winid in pairs(vim.api.nvim_tabpage_list_wins(0)) do
+			if vim.api.nvim_win_get_config(winid).zindex then
+				return
+			end
+		end
+		vim.diagnostic.open_float({
 			scope = "cursor",
-		}
-		vim.diagnostic.open_float(nil, opts)
+			focusable = false,
+			close_events = {
+				"CursorMoved",
+				"CursorMovedI",
+				"BufHidden",
+				"InsertCharPre",
+				"WinLeave",
+			},
+		})
 	end,
 })
 
