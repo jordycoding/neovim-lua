@@ -64,7 +64,8 @@ map("n", "<leader>fgS", "<cmd>Telescope git_status")
 map("n", "<leader>z", "<cmd>ZenMode<CR>")
 
 -- Trouble
-map("n", "<leader>t", "<cmd>TroubleToggle<CR>")
+map("n", "<leader>t", ":Trouble diagnostics<CR>")
+map("n", "<leader>tb", ":Trouble diagnostics toggle filter.buf=0<CR>")
 
 -- Symbols
 map("n", "<leader>s", "<cmd>SymbolsOutline<CR>")
