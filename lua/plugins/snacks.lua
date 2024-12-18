@@ -7,6 +7,7 @@ return {
 		bigfile = { enabled = true },
 		dashboard = { enabled = true },
 		input = { enabled = true },
+		notify = { enabled = true },
 		notifier = { enabled = true },
 		quickfile = { enabled = true },
 		scroll = { enabled = true },
