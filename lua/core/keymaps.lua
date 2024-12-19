@@ -43,6 +43,12 @@ map("n", "<leader>n", ":NvimTreeToggle<CR>")
 map("n", "<leader>fgw", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>")
 map("n", "<leader>gwc", ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>")
 
+-- Lazygit
+map("n", "<leader>gg", ":lua Snacks.lazygit()<CR>")
+
+-- Zen
+map("n", "<leader>z", ":lua Snacks.zen()<CR>")
+
 -- Telescope
 map("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
 map("n", "<leader>fa", "<cmd>Telescope commands<CR>")
