@@ -8,7 +8,7 @@ return {
 			integrations = {
 				lsp_trouble = true,
 				which_key = true,
-				leap = true,
+				flash = true,
 				harpoon = true,
 				fidget = true,
 				blink_cmp = true,
