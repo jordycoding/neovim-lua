@@ -11,5 +11,7 @@ return {
 		notifier = { enabled = true },
 		quickfile = { enabled = true },
 		scroll = { enabled = true },
+		rename = { enabled = true },
+		gitbrowse = { enabled = true },
 	},
 }
