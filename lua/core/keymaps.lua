@@ -39,10 +39,6 @@ end)
 -- NvimTree
 map("n", "<leader>n", ":NvimTreeToggle<CR>")
 
--- Fugitive
-map("n", "<leader>gg", ":G<CR>")
-map("n", "<leader>gp", ":G push<CR>")
-
 -- Worktree
 map("n", "<leader>fgw", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>")
 map("n", "<leader>gwc", ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>")
@@ -59,9 +55,6 @@ map("n", "<leader>fgb", "<cmd>Telescope git_branches<CR>")
 map("n", "<leader>fgc", "<cmd>Telescope git_commits<CR>")
 map("n", "<leader>fgs", "<cmd>Telescope git_stash<CR>")
 map("n", "<leader>fgS", "<cmd>Telescope git_status")
-
--- Zen mode
-map("n", "<leader>z", "<cmd>ZenMode<CR>")
 
 -- Trouble
 map("n", "<leader>t", ":Trouble diagnostics<CR>")

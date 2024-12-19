@@ -13,5 +13,7 @@ return {
 		scroll = { enabled = true },
 		rename = { enabled = true },
 		gitbrowse = { enabled = true },
+		lazygit = { enabled = true },
+		zen = { enabled = true },
 	},
 }
