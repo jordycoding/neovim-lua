@@ -11,6 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-return require("lazy").setup({ { import = "plugins" }, { import = "plugins.ui" }, { import = "plugins.luasnip" } }, {
-	lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json", -- Config folder is readonly because of home manager
-})
+return require("lazy").setup(
+	{ { import = "plugins" }, { import = "plugins.ui" }, { import = "plugins.lsp" }, { import = "plugins.luasnip" } },
+	{
+		lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json", -- Config folder is readonly because of home manager
+	}
+)

@@ -11,7 +11,7 @@ return {
 				leap = true,
 				harpoon = true,
 				fidget = true,
-				cmp = true,
+				blink_cmp = true,
 				native_lsp = {
 					enabled = true,
 					virtual_text = {
