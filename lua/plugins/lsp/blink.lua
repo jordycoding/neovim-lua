@@ -19,6 +19,7 @@ return {
 		},
 		sources = {
 			default = { "lsp", "path", "luasnip", "buffer", "lazydev", "copilot" },
+			cmdline = {},
 			providers = {
 				lazydev = { name = "LazyDev", module = "lazydev.integrations.blink", score_offset = 100 },
 				copilot = {
