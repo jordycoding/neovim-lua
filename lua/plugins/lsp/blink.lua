@@ -1,9 +1,6 @@
 return {
 	"saghen/blink.cmp",
 	version = "v0.*",
-	dependencies = {
-		"giuxtaposition/blink-cmp-copilot",
-	},
 	opts = {
 		keymap = { preset = "enter" },
 		snippets = {
@@ -34,5 +31,4 @@ return {
 		},
 		signature = { enabled = true },
 	},
-	config = true,
 }
