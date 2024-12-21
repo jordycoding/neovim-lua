@@ -2,6 +2,11 @@ return {
 	{
 		"rmagatti/auto-session",
 		lazy = false,
+		keys = {
+			{ "<leader>fS", "<cmd>SessionSearch<CR>", desc = "Session search" },
+		},
+		---@module "auto-session"
+		---@type AutoSession.Config
 		opts = {
 			suppressed_dirs = { "~/Downloads" },
 			bypass_save_filetypes = { "NvimTree", "alpha" },
@@ -23,6 +28,9 @@ return {
 					require("nvim-tree.api").tree.open()
 				end,
 			},
+			session_lens = {
+				load_on_setup = false,
+			},
 			post_restore_cmds = {
 				function()
 					-- Restore nvim-tree after a session is restored
@@ -34,5 +42,4 @@ return {
 			},
 		},
 	},
-	"rmagatti/session-lens",
 }

@@ -30,7 +30,6 @@ return {
 		{ "<leader>fb", "<cmd>Telescope buffers<cr>" },
 		{ "<leader>fy", "<cmd>Telescope neoclip<cr>" },
 		{ "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>" },
-		{ "<leader>fS", "<cmd>Telescope session-lens search_session<cr>" },
 		{ "<leader>fgb", "<cmd>Telescope git_branches<cr>" },
 		{ "<leader>fgc", "<cmd>Telescope git_commits<cr>" },
 		{ "<leader>fgs", "<cmd>Telescope git_stash<cr>" },
