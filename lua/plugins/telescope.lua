@@ -22,4 +22,18 @@ return {
 			},
 		})
 	end,
+	cmd = { "Telescope" },
+	keys = {
+		{ "<leader>ff", "<cmd>Telescope find_files<cr>" },
+		{ "<leader>fa", "<cmd>Telescope commands<cr>" },
+		{ "<leader>ft", "<cmd>Telescope builtin<cr>" },
+		{ "<leader>fb", "<cmd>Telescope buffers<cr>" },
+		{ "<leader>fy", "<cmd>Telescope neoclip<cr>" },
+		{ "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>" },
+		{ "<leader>fS", "<cmd>Telescope session-lens search_session<cr>" },
+		{ "<leader>fgb", "<cmd>Telescope git_branches<cr>" },
+		{ "<leader>fgc", "<cmd>Telescope git_commits<cr>" },
+		{ "<leader>fgs", "<cmd>Telescope git_stash<cr>" },
+		{ "<leader>fgS", "<cmd>Telescope git_status<cr>" },
+	},
 }

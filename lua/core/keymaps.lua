@@ -49,19 +49,6 @@ map("n", "<leader>gg", ":lua Snacks.lazygit()<CR>")
 -- Zen
 map("n", "<leader>z", ":lua Snacks.zen()<CR>")
 
--- Telescope
-map("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
-map("n", "<leader>fa", "<cmd>Telescope commands<CR>")
-map("n", "<leader>ft", "<cmd>Telescope builtin<CR>")
-map("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
-map("n", "<leader>fy", "<cmd>Telescope neoclip<CR>")
-map("n", "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>")
-map("n", "<leader>fS", ":Telescope session-lens search_session<CR>")
-map("n", "<leader>fgb", "<cmd>Telescope git_branches<CR>")
-map("n", "<leader>fgc", "<cmd>Telescope git_commits<CR>")
-map("n", "<leader>fgs", "<cmd>Telescope git_stash<CR>")
-map("n", "<leader>fgS", "<cmd>Telescope git_status")
-
 -- Trouble
 map("n", "<leader>t", ":Trouble diagnostics<CR>")
 map("n", "<leader>tb", ":Trouble diagnostics toggle filter.buf=0<CR>")
