@@ -43,7 +43,7 @@ return {
 		appearance = {
 			-- Blink does not expose its default kind icons so you must copy them all (or set your custom ones) and add Copilot
 			kind_icons = {
-				Copilot = "",
+				Copilot = "",
 				Text = "󰉿",
 				Method = "󰊕",
 				Function = "󰊕",
