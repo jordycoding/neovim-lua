@@ -66,9 +66,6 @@ map("n", "<leader>fgS", "<cmd>Telescope git_status")
 map("n", "<leader>t", ":Trouble diagnostics<CR>")
 map("n", "<leader>tb", ":Trouble diagnostics toggle filter.buf=0<CR>")
 
--- Symbols
-map("n", "<leader>s", "<cmd>SymbolsOutline<CR>")
-
 -- Copy paste system clipboard
 map("v", "Y", '"+y')
 

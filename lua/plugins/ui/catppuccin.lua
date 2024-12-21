@@ -6,6 +6,7 @@ return {
 		require("catppuccin").setup({
 			flavour = "mocha",
 			integrations = {
+				snacks = true,
 				lsp_trouble = true,
 				which_key = true,
 				flash = true,

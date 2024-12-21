@@ -4,8 +4,13 @@ return {
 		config = true,
 	},
 	{
-		"simrat39/symbols-outline.nvim",
+		"hedyhli/outline.nvim",
 		config = true,
+		lazy = true,
+		cmd = { "Outline", "OutlineOpen" },
+		keys = {
+			{ "<leader>s", "<cmd>Outline<CR>", desc = "Tolggle outline" },
+		},
 	},
 	{
 		"windwp/nvim-autopairs",
