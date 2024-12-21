@@ -1,6 +1,7 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
+		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			"hrsh7th/nvim-cmp",
 			"hrsh7th/cmp-nvim-lsp-signature-help",
@@ -35,6 +36,7 @@ return {
 	},
 	{
 		"j-hui/fidget.nvim",
+		lazy = true,
 		config = function()
 			require("fidget").setup({
 				notification = {

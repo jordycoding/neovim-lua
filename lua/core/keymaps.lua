@@ -36,9 +36,6 @@ vim.keymap.set("n", "<C-f>", function()
 	harpoon:list():select(4)
 end)
 
--- NvimTree
-map("n", "<leader>n", ":NvimTreeToggle<CR>")
-
 -- Worktree
 map("n", "<leader>fgw", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>")
 map("n", "<leader>gwc", ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>")

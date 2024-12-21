@@ -28,3 +28,11 @@ opt.foldenable = false
 opt.signcolumn = "yes"
 opt.scrolloff = 10
 opt.title = true
+
+-----------
+-- nvim-tree
+-----------
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
+g.nvim_tree_indent_markers = 1
+g.nvim_tree_highlight_opened_files = 1
