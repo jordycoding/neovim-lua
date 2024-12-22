@@ -2,8 +2,10 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
 	dependencies = {
-		"nvim-treesitter/playground",
-		"windwp/nvim-ts-autotag",
+		{
+			"windwp/nvim-ts-autotag",
+			config = true,
+		},
 		"nvim-treesitter/nvim-treesitter-context",
 		"nvim-treesitter/nvim-treesitter-textobjects",
 	},
@@ -36,12 +38,6 @@ return {
 			highlight = {
 				enable = true,
 				additional_vim_regex_highlighting = { "php" },
-			},
-			playground = {
-				enable = true,
-			},
-			autotag = {
-				enable = true,
 			},
 			incremental_selection = {
 				enable = true,
