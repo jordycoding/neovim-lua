@@ -60,5 +60,16 @@ return {
 		config = true,
 		cmd = { "Octo" },
 	},
-	"sindrets/diffview.nvim",
+	{
+		"sindrets/diffview.nvim",
+		cmd = {
+			"DiffviewClose",
+			"DiffviewFileHistory",
+			"DiffviewFocusFiles",
+			"DiffviewLog",
+			"DiffviewOpen",
+			"DiffviewRefresh",
+			"DiffviewToggleFiles",
+		},
+	},
 }
