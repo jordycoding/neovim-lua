@@ -75,6 +75,7 @@ return {
 		},
 		{
 			"mfussenegger/nvim-dap-python",
+			ft = "python",
 		},
 		{
 			"mxsdev/nvim-dap-vscode-js",
