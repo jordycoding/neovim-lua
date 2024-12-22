@@ -41,7 +41,10 @@ return {
 			})
 		end,
 	},
-	"mfussenegger/nvim-jdtls",
+	{
+		lazy = true,
+		"mfussenegger/nvim-jdtls",
+	},
 	{
 		"mrcjkb/rustaceanvim",
 		version = "^4", -- Recommended

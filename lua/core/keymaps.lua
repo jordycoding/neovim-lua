@@ -49,12 +49,6 @@ map("n", "<leader>z", ":lua Snacks.zen()<CR>")
 -- Copy paste system clipboard
 map("v", "Y", '"+y')
 
--- Spectre
-map("n", "<leader>S", '<cmd>lua require("spectre").open()<CR>')
-map("n", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>')
-map("v", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>')
-map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>')
-
 -- DAP
 map("n", "<F5>", ":lua require('dap').continue()<CR>")
 map("n", "<F10>", ":lua require('dap').step_over()<CR>")
