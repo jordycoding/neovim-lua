@@ -1,4 +1,7 @@
 return {
 	"AckslD/nvim-neoclip.lua",
-	config = true,
+	opts = {},
+	keys = {
+		{ "<leader>fy", "<cmd>Telescope neoclip<cr>" },
+	},
 }

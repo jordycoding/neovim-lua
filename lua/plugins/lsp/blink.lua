@@ -1,6 +1,8 @@
 return {
 	"saghen/blink.cmp",
 	version = "v0.*",
+	event = "InsertEnter",
+	---@module 'blink.cmp'
 	--@type blink-cmp.Config
 	opts = {
 		keymap = { preset = "enter" },
@@ -77,5 +79,19 @@ return {
 			},
 		},
 		signature = { enabled = true },
+	},
+	dependencies = {
+		"giuxtaposition/blink-cmp-copilot",
+		dependencies = {
+			{
+				"zbirenbaum/copilot.lua",
+				config = function()
+					require("copilot").setup({
+						suggestion = { enabled = false },
+						panel = { enabled = false },
+					})
+				end,
+			},
+		},
 	},
 }
