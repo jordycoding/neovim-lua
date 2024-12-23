@@ -15,7 +15,18 @@ return {
 	{
 		"luckasRanarison/tailwind-tools.nvim",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		config = true,
+		---@type TailwindTools.Option
+		opts = {
+			server = {
+				settings = {
+					experimental = {
+						classRegex = {
+							{ "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+						},
+					},
+				},
+			},
+		},
 	},
 	{
 		"L3MON4D3/LuaSnip",
