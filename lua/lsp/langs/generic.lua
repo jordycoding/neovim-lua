@@ -19,6 +19,7 @@ local servers = {
 	"ltex",
 	"jsonls",
 	"dartls",
+	"astro",
 }
 for _, lsp in pairs(servers) do
 	require("lspconfig")[lsp].setup({
