@@ -1,0 +1,25 @@
+return {
+	"stevearc/overseer.nvim",
+	cmd = {
+		"OverseerOpen",
+		"OverseerClose",
+		"OverseerToggle",
+		"OverseerSaveBundle",
+		"OverseerLoadBundle",
+		"OverseerDeleteBundle",
+		"OverseerRunCmd",
+		"OverseerRun",
+		"OverseerInfo",
+		"OverseerBuild",
+		"OverseerQuickAction",
+		"OverseerTaskAction",
+		"OverseerClearCache",
+	},
+	keys = {
+		{ "<leader>ot", "<cmd>OverseerToggle<cr>" },
+		{ "<leader>oR", "<cmd>OverseerRunCmd<cr>" },
+		{ "<leader>or", "<cmd>OverseerRun<cr>" },
+		{ "<leader>oi", "<cmd>OverseerInfo<cr>" },
+		{ "<leader>ob", "<cmd>OverseerBuild<cr>" },
+	},
+}
