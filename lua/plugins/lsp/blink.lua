@@ -7,7 +7,7 @@ return {
 	opts = {
 		keymap = { preset = "enter" },
 		snippets = {
-			preset = { "luasnip" },
+			preset = "luasnip",
 		},
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer", "lazydev", "copilot" },
