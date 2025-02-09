@@ -19,8 +19,4 @@ return {
 			{ "<leader>s", "<cmd>Outline<CR>", desc = "Tolggle outline" },
 		},
 	},
-	{
-		"windwp/nvim-autopairs",
-		config = true,
-	},
 }
