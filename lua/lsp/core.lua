@@ -10,11 +10,7 @@ vim.o.updatetime = 250
 vim.api.nvim_create_autocmd({ "CursorHold" }, {
 	pattern = "*",
 	callback = function()
-		for _, winid in pairs(vim.api.nvim_tabpage_list_wins(0)) do
-			if vim.api.nvim_win_get_config(winid).zindex then
-				return
-			end
-		end
+		print("CursorHold triggered")
 		vim.diagnostic.open_float({
 			scope = "cursor",
 			focusable = false,
@@ -23,6 +19,7 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
 				"CursorMovedI",
 				"BufHidden",
 				"InsertCharPre",
+				"InsertEnter",
 				"WinLeave",
 			},
 		})
@@ -33,5 +30,5 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
 vim.diagnostic.config({
 	virtual_text = false,
 	severity_sort = true,
-	update_in_insert = true,
+	-- update_in_insert = true,
 })
