@@ -93,11 +93,16 @@ return {
 	},
 	{
 		"j-hui/fidget.nvim",
-		lazy = true,
+		-- lazy = true,
 		opts = {
 			notification = {
 				window = {
 					winblend = 100,
+				},
+			},
+			integration = {
+				["nvim-tree"] = {
+					enable = false,
 				},
 			},
 		},
