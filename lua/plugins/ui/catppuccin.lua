@@ -27,6 +27,9 @@ return {
 						warnings = { "underline" },
 						information = { "underline" },
 					},
+					inlay_hints = {
+						background = false,
+					},
 				},
 				indent_blankline = {
 					enabled = true,
