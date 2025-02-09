@@ -10,7 +10,6 @@ vim.o.updatetime = 250
 vim.api.nvim_create_autocmd({ "CursorHold" }, {
 	pattern = "*",
 	callback = function()
-		print("CursorHold triggered")
 		vim.diagnostic.open_float({
 			scope = "cursor",
 			focusable = false,
