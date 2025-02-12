@@ -28,7 +28,8 @@ return {
 		---@type conform.setupOpts
 		opts = {
 			format_on_save = function(bufnr)
-				local slow_format_filetypes = {}
+				local slow_format_filetypes =
+					{ "dart", "javascript", "javascriptreact", "typescript", "typescriptreact" }
 				if slow_format_filetypes[vim.bo[bufnr].filetype] then
 					return
 				end
@@ -65,22 +66,22 @@ return {
 			},
 		},
 	},
-	-- {
-	-- 	"luckasRanarison/tailwind-tools.nvim",
-	-- 	dependencies = { "nvim-treesitter/nvim-treesitter" },
-	-- 	---@type TailwindTools.Option
-	-- 	opts = {
-	-- 		server = {
-	-- 			settings = {
-	-- 				experimental = {
-	-- 					classRegex = {
-	-- 						{ "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
-	-- 					},
-	-- 				},
-	-- 			},
-	-- 		},
-	-- 	},
-	-- },
+	{
+		"luckasRanarison/tailwind-tools.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		---@type TailwindTools.Option
+		opts = {
+			server = {
+				settings = {
+					experimental = {
+						classRegex = {
+							{ "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+						},
+					},
+				},
+			},
+		},
+	},
 	{
 		"L3MON4D3/LuaSnip",
 		version = "v2.*",
