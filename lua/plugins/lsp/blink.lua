@@ -9,9 +9,16 @@ return {
 		snippets = {
 			preset = "luasnip",
 		},
+		cmdline = {
+			enabled = true,
+			completion = {
+				menu = {
+					auto_show = false,
+				},
+			},
+		},
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer", "lazydev", "copilot" },
-			cmdline = {},
 			providers = {
 				lazydev = { name = "LazyDev", module = "lazydev.integrations.blink", score_offset = 100 },
 				copilot = {

@@ -3,47 +3,54 @@ return {
 	name = "catppuccin",
 	lazy = false,
 	config = function()
-		require("catppuccin").setup({
-			flavour = "mocha",
-			integrations = {
-				snacks = true,
-				lsp_trouble = true,
-				which_key = true,
-				flash = true,
-				harpoon = true,
-				fidget = true,
-				blink_cmp = true,
-				native_lsp = {
-					enabled = true,
-					virtual_text = {
-						errors = { "italic" },
-						hints = { "italic" },
-						warnings = { "italic" },
-						information = { "italic" },
+		require("catppuccin").setup(
+			---@type CatppuccinOptions
+			{
+				flavour = "mocha",
+				integrations = {
+					snacks = true,
+					lsp_trouble = true,
+					which_key = true,
+					flash = true,
+					harpoon = true,
+					fidget = true,
+					blink_cmp = true,
+					native_lsp = {
+						enabled = true,
+						virtual_text = {
+							errors = { "italic" },
+							hints = { "italic" },
+							warnings = { "italic" },
+							information = { "italic" },
+						},
+						underlines = {
+							errors = { "underline" },
+							hints = { "underline" },
+							warnings = { "underline" },
+							information = { "underline" },
+						},
+						inlay_hints = {
+							background = false,
+						},
 					},
-					underlines = {
-						errors = { "underline" },
-						hints = { "underline" },
-						warnings = { "underline" },
-						information = { "underline" },
+					treesitter = true,
+					treesitter_context = true,
+					telescope = {
+						enabled = true,
+						style = "nvchad",
 					},
-					inlay_hints = {
-						background = false,
+					headlines = true,
+					navic = {
+						enabled = true,
+						custom_bg = "NONE",
+					},
+					dap = {
+						enabled = true,
+						enable_ui = true,
 					},
 				},
-				treesitter = true,
-				treesitter_context = true,
-				headlines = true,
-				navic = {
-					enabled = true,
-					custom_bg = "NONE",
-				},
-				dap = {
-					enabled = true,
-					enable_ui = true,
-				},
-			},
-		})
+			}
+		)
 		require("bufferline").setup({
 			options = {
 				mode = "tabs",
