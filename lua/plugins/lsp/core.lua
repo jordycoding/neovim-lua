@@ -110,7 +110,7 @@ return {
 	},
 	{
 		lazy = true,
-		"mfussenegger/nvim-jdtls",
+		"nvim-java/nvim-java",
 	},
 	{
 		"mrcjkb/rustaceanvim",
