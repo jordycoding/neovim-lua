@@ -10,5 +10,9 @@ local config = {
 	root_dir = vim.fs.dirname(vim.fs.find({ ".gradlew", "mvnw" }, { upward = true })[1]),
 	capabilities = util.capabilities,
 }
-require("java").setup()
+require("java").setup({
+	jdk = {
+		auto_install = false,
+	},
+})
 require("lspconfig").jdtls.setup(config)
