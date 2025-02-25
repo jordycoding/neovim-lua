@@ -111,6 +111,9 @@ return {
 	{
 		lazy = true,
 		"nvim-java/nvim-java",
+		config = function()
+			require("java").setup()
+		end,
 	},
 	{
 		"mrcjkb/rustaceanvim",
