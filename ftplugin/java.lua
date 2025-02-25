@@ -8,5 +8,7 @@ local config = {
 	on_attach = util.on_attach,
 	cmd = { "jdtls", "-data", workspace_folder },
 	root_dir = vim.fs.dirname(vim.fs.find({ ".gradlew", "mvnw" }, { upward = true })[1]),
+	capabilities = util.capabilities,
 }
-require("jdtls").start_or_attach(config)
+require("java").setup()
+require("lspconfig").jdtls.setup(config)
