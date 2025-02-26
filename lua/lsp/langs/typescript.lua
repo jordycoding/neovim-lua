@@ -18,7 +18,7 @@ require("lspconfig").vtsls.setup({
 				globalPlugins = {
 					{
 						name = "@vue/typescript-plugin",
-						location = "/home/jordy/.npm-packages/lib/node_modules/@vue/typescript-plugin",
+						location = "$HOME/.npm-packages/lib/node_modules/@vue/typescript-plugin",
 						languages = { "typescript", "javascript", "vue" },
 						configNamespace = "typescript",
 					},
