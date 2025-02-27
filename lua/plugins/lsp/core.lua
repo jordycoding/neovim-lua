@@ -111,7 +111,6 @@ return {
 		},
 	},
 	{
-		lazy = true,
 		"nvim-java/nvim-java",
 		opts = {
 			jdk = {
