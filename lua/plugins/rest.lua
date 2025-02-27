@@ -5,6 +5,6 @@ return {
 	},
 	keys = {
 		{ "<leader>ro", ":Rest run<cr>" },
-		{ "<leader>rr", ":Rest run" },
+		{ "<leader>rr", ":Rest run<cr>" },
 	},
 }
