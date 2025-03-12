@@ -19,6 +19,9 @@ return {
 		},
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer", "lazydev", "copilot" },
+			per_filetype = {
+				sql = { "snippets", "dadbod", "buffer" },
+			},
 			providers = {
 				lazydev = { name = "LazyDev", module = "lazydev.integrations.blink", score_offset = 100 },
 				copilot = {
@@ -36,6 +39,7 @@ return {
 						return items
 					end,
 				},
+				dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
 			},
 		},
 		appearance = {
