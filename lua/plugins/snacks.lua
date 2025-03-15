@@ -15,5 +15,6 @@ return {
 		lazygit = { enabled = true },
 		zen = { enabled = true },
 		indent = { enabled = true },
+		input = { enabled = true },
 	},
 }
