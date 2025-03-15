@@ -17,12 +17,12 @@ return {
 					blink_cmp = true,
 					native_lsp = {
 						enabled = true,
-						virtual_text = {
-							errors = { "italic" },
-							hints = { "italic" },
-							warnings = { "italic" },
-							information = { "italic" },
-						},
+						-- virtual_text = {
+						-- 	errors = { "italic" },
+						-- 	hints = { "italic" },
+						-- 	warnings = { "italic" },
+						-- 	information = { "italic" },
+						-- },
 						underlines = {
 							errors = { "underline" },
 							hints = { "underline" },
@@ -48,6 +48,9 @@ return {
 						enabled = true,
 						enable_ui = true,
 					},
+				},
+				styles = {
+					conditionals = {},
 				},
 			}
 		)

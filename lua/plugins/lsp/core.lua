@@ -100,6 +100,7 @@ return {
 		opts = {
 			notification = {
 				window = {
+					normal_hl = "DiagnosticInfo",
 					winblend = 100,
 				},
 			},

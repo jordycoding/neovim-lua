@@ -59,9 +59,10 @@ return {
 				-- Text object
 				map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
 			end,
+			current_line_blame = true,
 		},
 	},
-	"f-person/git-blame.nvim",
+	-- "f-person/git-blame.nvim",
 	{
 		"pwntester/octo.nvim",
 		config = true,
