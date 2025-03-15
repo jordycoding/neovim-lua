@@ -6,7 +6,7 @@ return {
 			"Trouble",
 		},
 		keys = {
-			{ "<leader>t", ":Trouble diagnostics <cr>" },
+			{ "<leader>tt", ":Trouble diagnostics <cr>" },
 			{ "<leader>tb", ":Trouble diagnostics toggle filter.buf=0<cr>" },
 		},
 	},

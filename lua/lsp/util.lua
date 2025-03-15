@@ -46,8 +46,8 @@ function M.on_attach(client, bufnr)
 	--     augroup END
 	--     ]])
 	-- end
-	if client.server_capabilities.documentSymbolProvider then
-		navic.attach(client, bufnr)
+	if vim.b[bufnr].diagnostics_enabled then
+		vim.diagnostic.show(nil, bufnr, nil, { virtual_text = true })
 	end
 	if client.server_capabilities.inlayHintProvider then
 		vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })

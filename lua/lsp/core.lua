@@ -25,9 +25,27 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
 	end,
 })
 
+function diagnostic_toggle(global)
+	local vars, bufnr, cmd
+	if global then
+		vars = vim.g
+		bufnr = nil
+	else
+		vars = vim.b
+		bufnr = 0
+	end
+	vars.diagnostics_enabled = not vars.diagnostics_enabled
+	if vars.diagnostics_enabled then
+		vim.diagnostic.show(nil, bufnr, nil, { virtual_text = true })
+		vim.api.nvim_echo({ { "Enabling diagnostics…" } }, false, {})
+	else
+		vim.diagnostic.show(nil, bufnr, nil, { virtual_text = false })
+		vim.api.nvim_echo({ { "disabling diagnostics…" } }, false, {})
+	end
+end
+vim.keymap.set("n", "<leader>tT", diagnostic_toggle)
+
 -- Disable virtualtext as it doesn't wrap and hovering works better
 vim.diagnostic.config({
 	virtual_text = false,
-	severity_sort = true,
-	-- update_in_insert = true,
 })
