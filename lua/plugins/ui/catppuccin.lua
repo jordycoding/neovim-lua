@@ -35,10 +35,6 @@ return {
 					},
 					treesitter = true,
 					treesitter_context = true,
-					telescope = {
-						enabled = true,
-						style = "nvchad",
-					},
 					headlines = true,
 					navic = {
 						enabled = true,

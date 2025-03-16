@@ -36,12 +36,6 @@ vim.keymap.set("n", "<C-f>", function()
 	harpoon:list():select(4)
 end)
 
--- Lazygit
-map("n", "<leader>gg", ":lua Snacks.lazygit()<CR>")
-
--- Zen
-map("n", "<leader>z", ":lua Snacks.zen()<CR>")
-
 -- Copy paste system clipboard
 map("v", "Y", '"+y')
 
