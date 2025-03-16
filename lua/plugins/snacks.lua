@@ -16,7 +16,7 @@ return {
 		zen = { enabled = true },
 		indent = { enabled = true },
 		input = { enabled = true },
-		picker = { enabled = true, layout = { preset = "ivy" } },
+		picker = { enabled = true, layout = { preset = "vscode", preview = true } },
 	},
 	keys = {
 		{
