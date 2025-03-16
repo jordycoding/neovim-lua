@@ -4,7 +4,9 @@ return {
 		"nvim-lua/plenary.nvim",
 		"sindrets/diffview.nvim",
 	},
-	config = true,
+	opts = {
+		graph_style = "kitty",
+	},
 	cmd = { "Neogit" },
 	keys = {
 		{
