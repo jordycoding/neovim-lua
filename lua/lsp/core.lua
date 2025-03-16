@@ -96,26 +96,32 @@ if fancy_terms[term_program] then
 			mod_hl("GitSignsCurrentLineBlame", { bold = true, italic = true })
 
 			-- Treesitter
-			mod_hl("@comment.warning", { bold = true })
-			mod_hl("@comment.error", { bold = true })
-			mod_hl("@comment.note", { bold = true })
-			mod_hl("@comment.todo", { bold = true })
-			mod_hl("@string.documentation", { bold = true })
-			mod_hl("@comment.documentatin", { bold = true })
-			mod_hl("@comment.documentation.typescript", { bold = true })
+			mod_hl("@comment.warning", { bold = true, italic = false })
+			mod_hl("@comment.error", { bold = true, italic = false })
+			mod_hl("@comment.note", { bold = true, italic = false })
+			mod_hl("@comment.todo", { bold = true, italic = false })
+			mod_hl("@string.documentation", { bold = true, italic = false })
+			mod_hl("@comment.documentatin", { bold = true, italic = false })
+			mod_hl("@comment.documentation.typescript", { bold = true, italic = false })
 
 			-- LSP
 			mod_hl("LspInlayHint", { bold = true })
 
 			-- Blink
-			mod_hl("PmenuSel", {})
-			mod_hl("Pmenu", {})
-			mod_hl("BlinkCmpLabelMatch", {})
+			mod_hl("PmenuSel", { bold = false, italic = false })
+			mod_hl("Pmenu", { bold = false, italic = false })
+			mod_hl("BlinkCmpLabelMatch", { bold = false, italic = false })
 
 			-- Markdown
 			mod_hl("@markup.link", { bold = false, italic = true })
 			mod_hl("@markup.link.url", { bold = false, italic = true })
 			mod_hl("@markup.link.markdown_inline", { bold = false, italic = true })
+
+			-- UI
+			mod_hl("ModeMsg", { bold = true, italic = true })
+			mod_hl("MoreMsg", { bold = true, italic = true })
+			mod_hl("StatusLine", { bold = true, italic = true })
+			mod_hl("StatusLineNC", { bold = true, italic = true })
 		end,
 	})
 end
