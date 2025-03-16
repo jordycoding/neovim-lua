@@ -48,3 +48,9 @@ map("n", "<leader>b", ":lua require('dap').toggle_breakpoint()<CR>")
 map("n", "<leader>B", ":lua require('dap').set_breakpoint()<CR>")
 map("n", "<leader>dr", ":lua require('dap').repl.open()<CR>")
 map("n", "<leader>du", ":lua require('dapui').toggle()<CR>")
+
+-- Move splits
+map("n", "<c-k>", ":wincmd k<CR>")
+map("n", "<c-j>", ":wincmd j<CR>")
+map("n", "<c-h>", ":wincmd h<CR>")
+map("n", "<c-l>", ":wincmd l<CR>")
