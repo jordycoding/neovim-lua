@@ -4,10 +4,16 @@ return {
 	opts = {
 		options = {
 			theme = "catppuccin",
+			section_separators = { left = "", right = "" },
+			component_separators = { left = "", right = "" },
 		},
 		sections = {
-			lualine_a = { "mode" },
-			lualine_b = { "branch", "diff", "diagnostics" },
+			lualine_a = { { "mode", color = { gui = "italic,bold" } } },
+			lualine_b = {
+				{ "branch", color = { gui = "italic,bold" } },
+				{ "b:gitsigns_status", color = { gui = "italic,bold" } },
+				{ "diagnostics", color = { gui = "italic,bold" } },
+			},
 			lualine_c = {
 				"%=", -- make the indicator center
 				separator = nil,
@@ -19,13 +25,32 @@ return {
 				},
 			},
 			lualine_x = {
-				"filetype",
+				{
+					"fileformat",
+					color = { gui = "italic,bold" },
+				},
+				{
+					"encoding",
+					color = { gui = "italic,bold" },
+				},
 			},
 			lualine_y = {
-				"b:gitsigns_status",
+				{
+
+					"location",
+					color = { gui = "italic,bold" },
+				},
+				{
+					"progress",
+					color = { gui = "italic,bold" },
+				},
 			},
 			lualine_z = {
-				"progress",
+				{
+					"datetime",
+					style = " %H:%M",
+					color = { gui = "italic,bold" },
+				},
 			},
 		},
 	},
