@@ -10,6 +10,9 @@ return {
 			"ThePrimeagen/harpoon",
 			branch = "harpoon2",
 		},
+		{
+			"mrjones2014/smart-splits.nvim",
+		},
 	},
 	config = function()
 		local harpoon = require("harpoon")
@@ -18,6 +21,26 @@ return {
 		require("legendary").setup({
 			extensions = {
 				lazy_nvim = true,
+				smart_splits = {
+					directions = { "h", "j", "k", "l" },
+					mods = {
+						move = "<C>",
+						resize = {
+							mod = "<M>",
+							prefix = "<leader>",
+						},
+						-- any of these can also be a table of the following form
+						swap = {
+							-- this will create the mapping like
+							-- <leader><C-h>
+							-- <leader><C-j>
+							-- <leader><C-k>
+							-- <leader><C-l>
+							mod = "<C>",
+							prefix = "<leader>",
+						},
+					},
+				},
 			},
 			keymaps = {
 				{
@@ -103,12 +126,6 @@ return {
 					description = "Toggle DAP UI",
 					opts = { silent = true },
 				},
-
-				-- Move splits
-				{ "<c-k>", ":wincmd k<CR>", description = "Window up", opts = { silent = true } },
-				{ "<c-j>", ":wincmd j<CR>", description = "Window down", opts = { silent = true } },
-				{ "<c-h>", ":wincmd h<CR>", description = "Window left", opts = { silent = true } },
-				{ "<c-l>", ":wincmd l<CR>", description = "Window right", opts = { silent = true } },
 
 				-- Harpoon
 				{
