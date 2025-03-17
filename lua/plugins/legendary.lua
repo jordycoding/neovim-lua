@@ -6,7 +6,13 @@ return {
 	priority = 10000,
 	lazy = false,
 	dependencies = {
-		"kkharji/sqlite.lua",
+        {
+            "kkharji/sqlite.lua",
+        }
+        {
+            "ThePrimeagen/harpoon",
+            branch = "harpoon2",
+    }
 	},
 	opts = {
 		extensions = {
