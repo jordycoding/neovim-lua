@@ -91,5 +91,11 @@ return {
 				Snacks.picker.git_status()
 			end,
 		},
+		{
+			"<leader>fG",
+			function()
+				Snacks.picker.grep()
+			end,
+		},
 	},
 }
