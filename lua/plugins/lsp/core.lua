@@ -118,6 +118,7 @@ return {
 				auto_install = false,
 			},
 		},
+		ft = "java",
 	},
 	{
 		"mrcjkb/rustaceanvim",
