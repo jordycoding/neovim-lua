@@ -21,6 +21,7 @@ local servers = {
 	"dartls",
 	"astro",
 	"kulala_ls",
+	"lemminx",
 }
 for _, lsp in pairs(servers) do
 	require("lspconfig")[lsp].setup({
