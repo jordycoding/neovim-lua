@@ -17,6 +17,29 @@ return {
 			name = "lldb",
 		}
 
+		dap.adapters.firefox = {
+			type = "exeuctable",
+			command = "node",
+			args = { os.getenv("HOME") .. "/bin/dap-adapters/vscode-firefox-debug/dist/adapter.bundle.js" },
+		}
+
+		local firefoxPath = "/usr/bin/firefox"
+
+		-- Check if running on nixos
+		if os.execute("command -v nix") == 0 then
+			firefoxPath = "/run/current-system/sw/bin/firefox"
+		end
+
+		dap.configurations.typescript = {
+			name = "Debug with Firefox",
+			type = "firefox",
+			request = "launch",
+			reAttach = true,
+			url = "http://localhost:3000",
+			webRoot = "${workspaceFolder}",
+			firefoxExecutable = firefoxPath,
+		}
+
 		dap.configurations.rust = {
 			{
 				name = "Launch",
