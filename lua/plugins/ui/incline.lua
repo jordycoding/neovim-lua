@@ -18,6 +18,9 @@ return {
 		local mocha = require("catppuccin.palettes").get_palette("mocha")
 
 		require("incline").setup({
+			hide = {
+				cursorline = true,
+			},
 			window = {
 				padding = 0,
 				margin = { horizontal = 0, vertical = 0 },
