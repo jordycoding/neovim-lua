@@ -46,6 +46,14 @@ return {
 			ghost_text = {
 				enabled = true,
 			},
+			trigger = {
+				show_on_blocked_trigger_characters = function(ctx)
+					if vim.bo.filetype == "cucumber" then
+						return { "\n" }
+					end
+					return { "", "\n", "\t" }
+				end,
+			},
 		},
 		appearance = {
 			-- Blink does not expose its default kind icons so you must copy them all (or set your custom ones) and add Copilot
