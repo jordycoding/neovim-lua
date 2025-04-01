@@ -21,6 +21,7 @@ return {
 			default = { "lsp", "path", "snippets", "buffer", "lazydev", "copilot" },
 			per_filetype = {
 				sql = { "snippets", "dadbod", "buffer" },
+				cucumber = { "lsp", "snippets" },
 			},
 			providers = {
 				lazydev = { name = "LazyDev", module = "lazydev.integrations.blink", score_offset = 100 },
