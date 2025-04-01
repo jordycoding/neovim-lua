@@ -52,7 +52,7 @@ return {
 					if vim.bo.filetype == "cucumber" then
 						return { "\n" }
 					end
-					return { "", "\n", "\t" }
+					return { " ", "\n", "\t" }
 				end,
 			},
 		},
