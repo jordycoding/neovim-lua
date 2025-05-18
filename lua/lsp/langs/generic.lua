@@ -22,6 +22,7 @@ local servers = {
 	"astro",
 	"kulala_ls",
 	"lemminx",
+	"arduino_language_server",
 }
 for _, lsp in pairs(servers) do
 	require("lspconfig")[lsp].setup({
