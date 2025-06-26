@@ -1,4 +1,5 @@
-local bufnr = vim.api.nvim_get_current_buf()
+local util = require("lsp.util")
+
 local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
@@ -125,3 +126,11 @@ if fancy_terms[term_program] then
 		end,
 	})
 end
+
+vim.api.nvim.create_autocmd("LspAttach", {
+	callback = function(ev)
+		local client = vim.lsp.get_client_by_id(ev.data.client_id)
+		local bufnr = ev.buf
+		util.on_attach(client, bufnr)
+	end,
+})

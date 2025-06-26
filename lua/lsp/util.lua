@@ -2,17 +2,8 @@ local navic = require("nvim-navic")
 
 local M = {}
 
-local capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-capabilities.textDocument.colorProvider = {
-	dynamicRegistration = true,
-}
-
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
 local opts = { noremap = true, silent = true }
 M.opts = opts
-M.capabilities = capabilities
 function M.on_attach(client, bufnr)
 	-- Enable completion triggered by <c-x><c-o>
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")

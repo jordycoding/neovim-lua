@@ -22,14 +22,10 @@ local servers = {
 	"astro",
 	"kulala_ls",
 	"lemminx",
+	"roslyn_ls",
+	"intelephense",
+	"yamlls",
 }
 for _, lsp in pairs(servers) do
-	require("lspconfig")[lsp].setup({
-		on_attach = util.on_attach,
-		flags = {
-			-- This will be the default in neovim 0.7+
-			debounce_text_changes = 150,
-		},
-		capabilities = util.capabilities,
-	})
+	vim.lsp.enable(lsp)
 end

@@ -1,8 +1,5 @@
-local util = require("lsp.util")
-
-require("lspconfig").vtsls.setup({
-	on_attach = util.on_attach,
-	capabilities = util.capabilities,
+vim.lsp.enable("vtsls")
+vim.lsp.config("vtsls", {
 	filetypes = {
 		"javascript",
 		"javascriptreact",

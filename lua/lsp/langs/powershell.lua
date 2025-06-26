@@ -1,7 +1,6 @@
 local util = require("lsp.util")
 
-require("lspconfig").powershell_es.setup({
-	on_attach = util.on_attach,
-	capabilities = util.capabilities,
+vim.lsp.enable("powershell_es")
+vim.lsp.config("powershell_es", {
 	bundle_path = os.getenv("HOME") .. "/bin/PowerShellEditorServices",
 })

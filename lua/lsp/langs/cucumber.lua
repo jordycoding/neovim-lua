@@ -1,8 +1,7 @@
 local util = require("lsp.util")
 
-require("lspconfig").cucumber_language_server.setup({
-	on_attach = util.on_attach,
-	capabilities = util.capabilities,
+vim.lsp.enable("cucumber_language_server")
+vim.lsp.config("cucumber_language_server", {
 	filetypes = {
 		"cucumber",
 		"feature",
