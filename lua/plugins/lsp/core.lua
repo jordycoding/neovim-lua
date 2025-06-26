@@ -36,14 +36,10 @@ return {
 
 					local version_out = vim.fn.system(command .. " --version")
 
-					vim.notify(version_out)
-
 					--NOTE: system command returns the command as the first line of the result, need to get the version number on the final line
 					local version_result = version_out[#version_out]
 					local major_version = tonumber((version_out or ""):match("^(%d+)")) or 0
 					local is_new = major_version >= 1
-
-					vim.notify(tostring(is_new))
 
 					local args = is_new and { "format", "$FILENAME" } or { "--write-stdout" }
 
