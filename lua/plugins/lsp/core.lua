@@ -90,6 +90,7 @@ return {
 				html = { "eslint_d", "prettier", stop_after_first = true },
 				css = { "eslint_d", "prettier", stop_after_first = true },
 				cs = { "csharpier" },
+				d2 = { "d2" },
 			},
 		},
 	},
