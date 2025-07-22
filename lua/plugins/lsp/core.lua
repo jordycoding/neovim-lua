@@ -139,11 +139,7 @@ return {
 	},
 	{
 		"nvim-java/nvim-java",
-		opts = {
-			jdk = {
-				auto_install = false,
-			},
-		},
+		lazy = true,
 		dependencies = {
 			-- TODO: https://github.com/nvim-java/nvim-java/issues/384 remove when this is fixed
 			{ "mason-org/mason.nvim", version = "^1.0.0" },
