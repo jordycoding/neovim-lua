@@ -17,6 +17,7 @@ return {
 		indent = { enabled = true },
 		input = { enabled = true },
 		picker = { enabled = true, layout = { preset = "vscode", preview = true } },
+		image = { enabled = true },
 	},
 	keys = {
 		{
