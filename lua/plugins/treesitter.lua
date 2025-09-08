@@ -6,7 +6,12 @@ return {
 			"windwp/nvim-ts-autotag",
 			config = true,
 		},
-		{ "OXY2DEV/markview.nvim" },
+		{
+			"OXY2DEV/markview.nvim",
+			opts = {
+				latex = { enable = true },
+			},
+		},
 		-- "nvim-treesitter/nvim-treesitter-textobjects",
 	},
 	lazy = false,
