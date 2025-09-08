@@ -6,6 +6,8 @@ return {
 			"windwp/nvim-ts-autotag",
 			config = true,
 		},
+		dependencies = { "OXY2DEV/markview.nvim" },
+		lazy = false,
 		-- "nvim-treesitter/nvim-treesitter-textobjects",
 	},
 	config = function()
