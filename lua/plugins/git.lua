@@ -85,6 +85,7 @@ return {
 				function()
 					toggle_diffview("DiffviewOpen")
 				end,
+				desc = "Open diffview",
 			},
 		},
 	},
