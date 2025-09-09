@@ -12,10 +12,12 @@ return {
 		{
 			"<leader>gg",
 			":Neogit<cr>",
+			desc = "Open neogit",
 		},
 		{
 			"<leader>gc",
 			":Neogit commit<cr>",
+			desc = "Neogit commit",
 		},
 	},
 }
