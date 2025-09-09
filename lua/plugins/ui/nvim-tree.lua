@@ -19,7 +19,7 @@ return {
 		"NvimTreeHiTest",
 	},
 	keys = {
-		{ "<leader>n", "<cmd>NvimTreeToggle<cr>" },
+		{ "<leader>n", "<cmd>NvimTreeToggle<cr>", desc = "Toggle nvim tree" },
 	},
 	opts = {
 		actions = {
