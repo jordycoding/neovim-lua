@@ -17,10 +17,10 @@ return {
 		"OverseerClearCache",
 	},
 	keys = {
-		{ "<leader>ot", "<cmd>OverseerToggle<cr>" },
-		{ "<leader>oR", "<cmd>OverseerRunCmd<cr>" },
-		{ "<leader>or", "<cmd>OverseerRun<cr>" },
-		{ "<leader>oi", "<cmd>OverseerInfo<cr>" },
-		{ "<leader>ob", "<cmd>OverseerBuild<cr>" },
+		{ "<leader>ot", "<cmd>OverseerToggle<cr>", desc = "Toggle overseer" },
+		{ "<leader>oR", "<cmd>OverseerRunCmd<cr>", desc = "Overseer run cmd" },
+		{ "<leader>or", "<cmd>OverseerRun<cr>", desc = "Overseer run" },
+		{ "<leader>oi", "<cmd>OverseerInfo<cr>", desc = "Overseer info" },
+		{ "<leader>ob", "<cmd>OverseerBuild<cr>", desc = "Overseer build" },
 	},
 }
