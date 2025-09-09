@@ -25,78 +25,91 @@ return {
 			function()
 				Snacks.lazygit()
 			end,
+			desc = "Snacks lazygit",
 		},
 		{
 			"<leader>z",
 			function()
 				Snacks.zen()
 			end,
+			desc = "Snacks zen",
 		},
 		{
 			"<leader>ff",
 			function()
 				Snacks.picker.smart()
 			end,
+			desc = "Snacks picker smart",
 		},
 		{
 			"<leader>fF",
 			function()
 				Snacks.picker.git_files()
 			end,
+			desc = "Snacks picker git files",
 		},
 		{
 			"<leader>fa",
 			function()
 				Snacks.picker.commands()
 			end,
+			desc = "Snacks picker commands",
 		},
 		{
 			"<leader>ft",
 			function()
 				Snacks.picker.pickers()
 			end,
+			desc = "Snacks picker pickers",
 		},
 		{
 			"<leader>fb",
 			function()
 				Snacks.picker.buffers()
 			end,
+			desc = "Snacks picker buffers",
 		},
 		{
 			"<leader>fs",
 			function()
 				Snacks.picker.lsp_workspace_symbols()
 			end,
+			desc = "Snacks picker lsp symbols",
 		},
 		{
 			"<leader>fgb",
 			function()
 				Snacks.picker.git_branches()
 			end,
+			desc = "Snacks picker git branches",
 		},
 		{
 			"<leader>fgc",
 			function()
 				Snacks.picker.git_log()
 			end,
+			desc = "Snacks picker git log",
 		},
 		{
 			"<leader>fgs",
 			function()
 				Snacks.picker.git_stash()
 			end,
+			desc = "Snacks picker git stash",
 		},
 		{
 			"<leader>fgS",
 			function()
 				Snacks.picker.git_status()
 			end,
+			desc = "Snacks picker git status",
 		},
 		{
 			"<leader>fG",
 			function()
 				Snacks.picker.grep()
 			end,
+			desc = "Snacks picker grep",
 		},
 	},
 }
