@@ -3,6 +3,7 @@ return {
 	lazy = true,
 	config = function()
 		local dap = require("dap")
+		require("overseer").enable_dap()
 
 		local sign = vim.fn.sign_define
 
