@@ -13,7 +13,7 @@ return {
 		-- Set up rust debugging
 		dap.adapters.lldb = {
 			type = "executable",
-			command = "/run/current-system/sw/bin/lldb-vscode", -- adjust as needed, must be absolute path
+			command = "/run/current-system/sw/bin/lldb-dap", -- adjust as needed, must be absolute path
 			name = "lldb",
 		}
 
