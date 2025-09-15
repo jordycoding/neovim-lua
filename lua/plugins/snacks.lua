@@ -111,5 +111,12 @@ return {
 			end,
 			desc = "Snacks picker grep",
 		},
+		{
+			"<leader>fk",
+			function()
+				Snacks.picker.keymaps()
+			end,
+			desc = "Snacks picker keymaps",
+		},
 	},
 }
