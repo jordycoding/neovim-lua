@@ -5,4 +5,5 @@ vim.g.maplocalleader = ","
 require("core/options")
 require("lazy_setup")
 require("core/colors")
+require("core/keymaps")
 require("lsp")
