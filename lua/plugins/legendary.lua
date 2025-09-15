@@ -43,30 +43,6 @@ return {
 				},
 			},
 			keymaps = {
-				{
-					"<leader>e",
-					"<cmd>lua vim.diagnostic.open_float()<CR>",
-					description = "Diagnostic float",
-					opts = { silent = true },
-				},
-				{
-					"[d",
-					"<cmd>lua vim.diagnostic.goto_prev()<CR>",
-					description = "Diagnostic go to previous",
-					opts = { silent = true },
-				},
-				{
-					"]d",
-					"<cmd>lua vim.diagnostic.goto_next()<CR>",
-					description = "Diagnostic go to next",
-					opts = { silent = true },
-				},
-				{
-					"<leader>q",
-					"<cmd>lua vim.diagnostic.setloclist()<CR>",
-					description = "Diagnostic location list",
-					opts = { silent = true },
-				},
 
 				-- Tabs
 				{ "<tab>", ":tabnext<Return>", description = "Next tab", opts = { silent = true } },
