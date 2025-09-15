@@ -52,56 +52,6 @@ return {
 
 				-- Copy paste system clipboard
 				{ "Y", '"+y', description = "Yank to system clipboard", mode = { "v" } },
-
-				-- Harpoon
-				{
-					"<leader>ha",
-					function()
-						harpoon:list():add()
-					end,
-					description = "Add to harpoon",
-					opts = { silent = true },
-				},
-				{
-					"<leader>ht",
-					function()
-						harpoon.ui:toggle_quick_menu(harpoon:list())
-					end,
-					description = "Toggle harpoon menu",
-					opts = { silent = true },
-				},
-				{
-					"<C-a>",
-					function()
-						harpoon:list():select(1)
-					end,
-					description = "Harpoon first file",
-					opts = { silent = true },
-				},
-				{
-					"<C-s>",
-					function()
-						harpoon:list():select(2)
-					end,
-					description = "Harpoon second file",
-					opts = { silent = true },
-				},
-				{
-					"<C-d>",
-					function()
-						harpoon:list():select(3)
-					end,
-					description = "Harpoon third file",
-					opts = { silent = true },
-				},
-				{
-					"<C-f>",
-					function()
-						harpoon:list():select(4)
-					end,
-					description = "Harpoon fourth file",
-					opts = { silent = true },
-				},
 			},
 		})
 	end,
