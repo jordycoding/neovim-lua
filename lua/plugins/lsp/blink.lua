@@ -19,10 +19,10 @@ return {
 		},
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer", "lazydev" },
-			per_filetype = blink({
+			per_filetype = {
 				sql = { "snippets", "dadbod", "buffer" },
 				cucumber = { "lsp", "snippets" },
-			}),
+			},
 			providers = {
 				lazydev = { name = "LazyDev", module = "lazydev.integrations.blink", score_offset = 100 },
 				dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
