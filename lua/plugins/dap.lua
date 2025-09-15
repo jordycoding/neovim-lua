@@ -90,6 +90,48 @@ return {
 			},
 		}
 	end,
+	keys = {
+		{
+			"<leader>dc",
+			":lua require('dap').continue()<CR>",
+			desc = "DAP Continue",
+		},
+		{
+			"<leader>do",
+			":lua require('dap').step_over()<CR>",
+			desc = "DAP Step over",
+		},
+		{
+			"<leader>di",
+			":lua require('dap').step_into()<CR>",
+			desc = "DAP Step into",
+		},
+		{
+			"<leader>dO",
+			":lua require('dap').step_out()<CR>",
+			desc = "DAP Step out",
+		},
+		{
+			"<leader>db",
+			":lua require('dap').toggle_breakpoint()<CR>",
+			desc = "DAP Toggle breakpoint",
+		},
+		{
+			"<leader>dB",
+			":lua require('dap').set_breakpoint()<CR>",
+			desc = "DAP Set breakpoint",
+		},
+		{
+			"<leader>dr",
+			":lua require('dap').repl.open()<CR>",
+			desc = "DAP Open REPL",
+		},
+		{
+			"<leader>du",
+			":lua require('dapui').toggle()<CR>",
+			desc = "Toggle DAP UI",
+		},
+	},
 	dependencies = {
 		{
 			"rcarriga/nvim-dap-ui",
