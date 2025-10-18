@@ -17,6 +17,10 @@ return {
 			command = "/run/current-system/sw/bin/lldb-dap", -- adjust as needed, must be absolute path
 			name = "lldb",
 		}
+		dap.adapters.codelldb = {
+			type = "executable",
+			command = "codelldb",
+		}
 
 		dap.adapters.firefox = {
 			type = "executable",
@@ -104,6 +108,52 @@ return {
 				end,
 				cwd = "${workspaceFolder}",
 			},
+			{
+				name = "Attach to lldbserver",
+				type = "lldb",
+				request = "attach",
+				target = function()
+					-- Default to localhost:1234, but allow override
+					return vim.fn.input("gdbserver target: ", "localhost:1234", "file")
+				end,
+				program = function()
+					-- Get current buffer info
+					local current_file = vim.fn.expand("%:p") -- Full path of current file
+					local current_dir = vim.fn.expand("%:p:h") -- Directory of current file
+					local file_name = vim.fn.expand("%:t:r") -- Filename without extension
+
+					-- Check if we're editing a C/C++ file
+					local is_c_file = current_file:match("%.c$")
+						or current_file:match("%.cpp$")
+						or current_file:match("%.cc$")
+
+					if is_c_file then
+						-- First, try to find the executable in common build locations
+						local possible_paths = {
+							"./" .. file_name, -- Same directory as source
+							"./build/" .. file_name, -- Common build directory
+							current_dir .. "/" .. file_name, -- Same dir as source file
+							"./debug/" .. file_name, -- Debug build directory
+							"./out/" .. file_name, -- Another common location
+						}
+
+						-- Check if any of these exist
+						for _, path in ipairs(possible_paths) do
+							if vim.fn.filereadable(path) == 1 then
+								return path
+							end
+						end
+
+						-- If no existing binary found, suggest a name based on current file
+						local suggested_path = "./" .. file_name
+						return vim.fn.input("Path to executable: ", suggested_path, "file")
+					else
+						-- Not a C file, just use normal file input
+						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+					end
+				end,
+			},
+			cwd = "${workspaceFolder}",
 		}
 	end,
 	keys = {
