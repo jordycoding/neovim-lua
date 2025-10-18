@@ -113,40 +113,7 @@ return {
 				type = "lldb",
 				request = "attach",
 				program = function()
-					-- Get current buffer info
-					local current_file = vim.fn.expand("%:p") -- Full path of current file
-					local current_dir = vim.fn.expand("%:p:h") -- Directory of current file
-					local file_name = vim.fn.expand("%:t:r") -- Filename without extension
-
-					-- Check if we're editing a C/C++ file
-					local is_c_file = current_file:match("%.c$")
-						or current_file:match("%.cpp$")
-						or current_file:match("%.cc$")
-
-					if is_c_file then
-						-- First, try to find the executable in common build locations
-						local possible_paths = {
-							"./" .. file_name, -- Same directory as source
-							"./build/" .. file_name, -- Common build directory
-							current_dir .. "/" .. file_name, -- Same dir as source file
-							"./debug/" .. file_name, -- Debug build directory
-							"./out/" .. file_name, -- Another common location
-						}
-
-						-- Check if any of these exist
-						for _, path in ipairs(possible_paths) do
-							if vim.fn.filereadable(path) == 1 then
-								return path
-							end
-						end
-
-						-- If no existing binary found, suggest a name based on current file
-						local suggested_path = "./" .. file_name
-						return vim.fn.input("Path to executable: ", suggested_path, "file")
-					else
-						-- Not a C file, just use normal file input
-						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-					end
+					return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
 				end,
 				["gdb-remote-port"] = 1234,
 				cwd = "${workspaceFolder}",
