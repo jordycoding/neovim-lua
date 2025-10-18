@@ -91,17 +91,19 @@ return {
 		}
 
 		dap.configurations.c = {
-			name = "Attach to running process (lldb)",
-			type = "lldb",
-			request = "attach",
-			program = function()
-				return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-			end,
-			pid = function()
-				local name = vim.fn.input("Executable name (filter): ")
-				return require("dap.utils").pick_process({ filter = name })
-			end,
-			cwd = "${workspaceFolder}",
+			{
+				name = "Attach to running process (lldb)",
+				type = "lldb",
+				request = "attach",
+				program = function()
+					return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+				end,
+				pid = function()
+					local name = vim.fn.input("Executable name (filter): ")
+					return require("dap.utils").pick_process({ filter = name })
+				end,
+				cwd = "${workspaceFolder}",
+			},
 		}
 	end,
 	keys = {
