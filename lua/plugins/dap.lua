@@ -152,8 +152,8 @@ return {
 						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
 					end
 				end,
+				cwd = "${workspaceFolder}",
 			},
-			cwd = "${workspaceFolder}",
 		}
 	end,
 	keys = {
