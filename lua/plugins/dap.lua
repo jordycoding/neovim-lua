@@ -112,10 +112,6 @@ return {
 				name = "Attach to lldbserver",
 				type = "lldb",
 				request = "attach",
-				target = function()
-					-- Default to localhost:1234, but allow override
-					return vim.fn.input("gdbserver target: ", "localhost:1234", "file")
-				end,
 				program = function()
 					-- Get current buffer info
 					local current_file = vim.fn.expand("%:p") -- Full path of current file
@@ -152,6 +148,7 @@ return {
 						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
 					end
 				end,
+				["gdb-remote-port"] = 1234,
 				cwd = "${workspaceFolder}",
 			},
 		}
