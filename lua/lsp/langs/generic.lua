@@ -25,6 +25,7 @@ local servers = {
 	"roslyn_ls",
 	"intelephense",
 	"yamlls",
+	"qmlls",
 }
 for _, lsp in pairs(servers) do
 	vim.lsp.enable(lsp)
