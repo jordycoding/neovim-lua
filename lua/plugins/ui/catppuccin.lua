@@ -15,6 +15,7 @@ return {
 					harpoon = true,
 					fidget = true,
 					blink_cmp = true,
+					blink_pairs = true,
 					native_lsp = {
 						enabled = true,
 						-- virtual_text = {
