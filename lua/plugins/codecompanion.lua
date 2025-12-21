@@ -9,6 +9,10 @@ return {
 			chat = {
 				adapter = "deepseek",
 			},
+			inline = {
+				adapter = "deepseek",
+				model = "deepseek-chat",
+			},
 		},
 		adapters = {
 			http = {
