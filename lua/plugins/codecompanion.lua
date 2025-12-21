@@ -23,6 +23,14 @@ return {
 						},
 					})
 				end,
+				mimo = function()
+					return require("codecompanion.adapters").extend("openai_compatible", {
+						env = {
+							url = "https://api.xiaomimimo.com/v1",
+							api_key = "cmd: op read op://Private/Xiaomi/nvim_api_key",
+						},
+					})
+				end,
 			},
 		},
 	},
