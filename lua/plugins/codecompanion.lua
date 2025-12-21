@@ -25,6 +25,8 @@ return {
 				end,
 				mimo = function()
 					return require("codecompanion.adapters").extend("openai_compatible", {
+						name = "xiaomi_mimo",
+						formatted_name = "Xiaomi MiMo",
 						env = {
 							url = "https://api.xiaomimimo.com",
 							api_key = "cmd: op read op://Private/Xiaomi/nvim_api_key",
