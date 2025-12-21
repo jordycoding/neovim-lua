@@ -46,6 +46,17 @@ function diagnostic_toggle(global)
 end
 vim.keymap.set("n", "<leader>tT", diagnostic_toggle)
 
+function inlay_hint_toggle()
+	local bufnr = vim.api.nvim_get_current_buf()
+	local enabled = vim.lsp.inlay_hint.is_enabled(bufnr)
+	vim.lsp.inlay_hint.enable(bufnr, not enabled)
+	if not enabled then
+		vim.api.nvim_echo({ { "Enabling inlay hints..." } }, false, {})
+	else
+		vim.api.nvim_echo({ { "Disabling inlay hints..." } }, false, {})
+	end
+end
+vim.keymap.set("n", "<leader>th", inlay_hint_toggle)
 -- Disable virtualtext as it doesn't wrap and hovering works better
 vim.diagnostic.config({
 	virtual_text = false,
