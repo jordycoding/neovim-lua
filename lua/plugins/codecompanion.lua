@@ -27,7 +27,7 @@ return {
 		{
 			"<leader>Cc",
 			"<cmd>CodeCompanionChat Toggle<cr>",
-			modes = { "n", "v" },
+			mode = { "n", "v" },
 			desc = "Toggle codecompanion chat",
 		},
 	},
