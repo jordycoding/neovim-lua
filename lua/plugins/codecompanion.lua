@@ -22,7 +22,7 @@ return {
 			},
 		},
 	},
-	cmd = { "CodeCompanion", "CoddeCompanionChat", "CodeCompanionCmd", "CodeCompanionActions" },
+	cmd = { "CodeCompanion", "CodeCompanionChat", "CodeCompanionCmd", "CodeCompanionActions" },
 	keys = {
 		{
 			"<leader>Cc",
