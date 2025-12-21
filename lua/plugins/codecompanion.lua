@@ -26,8 +26,7 @@ return {
 				mimo = function()
 					return require("codecompanion.adapters").extend("openai_compatible", {
 						env = {
-							url = "https://api.xiaomimimo.com/v1",
-							chat_url = "/v1/chat/completions",
+							url = "https://api.xiaomimimo.com",
 							api_key = "cmd: op read op://Private/Xiaomi/nvim_api_key",
 						},
 					})
