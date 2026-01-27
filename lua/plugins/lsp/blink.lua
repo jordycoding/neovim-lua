@@ -22,7 +22,6 @@ return {
 				default = { "lsp", "path", "snippets", "buffer", "lazydev" },
 				per_filetype = {
 					sql = { "snippets", "dadbod", "buffer" },
-					cucumber = { "lsp", "snippets" },
 				},
 				providers = {
 					lazydev = { name = "LazyDev", module = "lazydev.integrations.blink", score_offset = 100 },
@@ -71,14 +70,6 @@ return {
 				},
 				ghost_text = {
 					enabled = true,
-				},
-				trigger = {
-					show_on_blocked_trigger_characters = function(ctx)
-						if vim.bo.filetype == "cucumber" then
-							return { "\n" }
-						end
-						return { " ", "\n", "\t" }
-					end,
 				},
 			},
 			appearance = {

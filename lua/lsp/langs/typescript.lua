@@ -1,12 +1,6 @@
 vim.lsp.enable("vtsls")
 vim.lsp.config("vtsls", {
 	filetypes = {
-		"javascript",
-		"javascriptreact",
-		"javascript.jsx",
-		"typescript",
-		"typescriptreact",
-		"typescript.tsx",
 		"vue",
 	},
 	settings = {
@@ -29,5 +23,17 @@ vim.lsp.config("vtsls", {
 				},
 			},
 		},
+	},
+})
+
+vim.lsp.enable("tsgo")
+vim.lsp.config("tsgo", {
+	filetypes = {
+		"javascript",
+		"javascriptreact",
+		"javascript.jsx",
+		"typescript",
+		"typescriptreact",
+		"typescript.tsx",
 	},
 })
