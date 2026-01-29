@@ -1,3 +1,4 @@
+vim.lsp.enable("vue_ls")
 vim.lsp.config("vue_ls", {
 	init_options = {
 		typescript = {
