@@ -1,4 +1,4 @@
-vim.lsp.config("volar", {
+vim.lsp.config("vue_ls", {
 	init_options = {
 		typescript = {
 			tsdk = "$HOME/.npm-packages/lib/node_modules/typescript/lib",
