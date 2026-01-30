@@ -26,6 +26,7 @@ local servers = {
 	"intelephense",
 	"yamlls",
 	"qmlls",
+	"tailwindcss",
 }
 for _, lsp in pairs(servers) do
 	vim.lsp.enable(lsp)
