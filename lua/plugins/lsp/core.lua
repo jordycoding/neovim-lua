@@ -81,7 +81,7 @@ return {
 				javascriptreact = { "biome-check", "prettier", stop_after_first = true },
 				typescript = { "eslint_d", "biome-check", "prettier", stop_after_first = true },
 				typescriptreact = { "eslint_d", "biome-check", "prettier", stop_after_first = true },
-				nix = { "nixpkgs_fmt" },
+				nix = { "nixfmt" },
 				json = { "biome", "prettier", stop_after_first = true },
 				go = { "goimports", "gofmt" },
 				vue = { "biome", "prettier", stop_after_first = true },
