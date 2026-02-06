@@ -72,7 +72,40 @@ return {
 		{
 			"<leader>fs",
 			function()
-				Snacks.picker.lsp_workspace_symbols()
+				Snacks.picker.lsp_workspace_symbols({
+					filter = {
+						vue = {
+							"Variable",
+							"Class",
+							"Constructor",
+							"Enum",
+							"Field",
+							"Function",
+							"Interface",
+							"Method",
+							"Module",
+							"Namespace",
+							"Property",
+							"Struct",
+							"Trait",
+						},
+						typescript = {
+							"Variable",
+							"Class",
+							"Constructor",
+							"Enum",
+							"Field",
+							"Function",
+							"Interface",
+							"Method",
+							"Module",
+							"Namespace",
+							"Property",
+							"Struct",
+							"Trait",
+						},
+					},
+				})
 			end,
 			desc = "Snacks picker lsp symbols",
 		},
