@@ -43,15 +43,17 @@ return {
 			"svelte",
 			"yaml",
 			"dart",
-			"typescriptreact",
-			"javascriptreact",
 		}
+
+		local filetypes = vim.list_extendd({}, ts_languages)
+		table.insert(filetypes, "typescriptreact")
+		table.insert(filetypes, "javascriptreact")
 
 		for _, parser in ipairs(ts_languages) do
 			ts.install(parser)
 		end
 		vim.api.nvim_create_autocmd("FileType", {
-			pattern = ts_languages,
+			pattern = filetypes,
 			callback = function()
 				vim.treesitter.start()
 				vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
