@@ -43,6 +43,8 @@ return {
 			"svelte",
 			"yaml",
 			"dart",
+			"typescriptreact",
+			"javascriptreact",
 		}
 
 		for _, parser in ipairs(ts_languages) do

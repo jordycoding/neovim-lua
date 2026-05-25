@@ -48,8 +48,8 @@ vim.keymap.set("n", "<leader>tT", diagnostic_toggle)
 
 function inlay_hint_toggle()
 	local bufnr = vim.api.nvim_get_current_buf()
-	local enabled = vim.lsp.inlay_hint.is_enabled(bufnr)
-	vim.lsp.inlay_hint.enable(bufnr, not enabled)
+	local enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr })
+	vim.lsp.inlay_hint.enable(not enabled, { bufnr = bufnr })
 	if not enabled then
 		vim.api.nvim_echo({ { "Enabling inlay hints..." } }, false, {})
 	else
