@@ -45,7 +45,7 @@ return {
 			"dart",
 		}
 
-		local filetypes = vim.list_extendd({}, ts_languages)
+		local filetypes = vim.list_extend({}, ts_languages)
 		table.insert(filetypes, "typescriptreact")
 		table.insert(filetypes, "javascriptreact")
 
