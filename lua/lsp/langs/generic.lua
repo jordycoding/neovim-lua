@@ -1,7 +1,7 @@
 local util = require("lsp.util")
 
 local servers = {
-	"pyright",
+	"ty",
 	"bashls",
 	"ansiblels",
 	"cssls",
