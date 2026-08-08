@@ -2,6 +2,7 @@ local util = require("lsp.util")
 
 local servers = {
 	"ty",
+	"oxlint",
 	"bashls",
 	"ansiblels",
 	"cssls",
