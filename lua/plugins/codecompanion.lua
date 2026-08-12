@@ -33,6 +33,16 @@ return {
 						},
 					})
 				end,
+				qwen = function()
+					return require("codecompanion.adapters").extend("openai_compatible", {
+						name = "qwen",
+						formatted_name = "Qwen",
+						env = {
+							url = "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+							api_key = "cmd: op read op://Private/Qwencloud/credential",
+						},
+					})
+				end,
 			},
 		},
 	},
