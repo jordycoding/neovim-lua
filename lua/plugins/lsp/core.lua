@@ -82,7 +82,7 @@ return {
 				typescript = { "oxfmt", "eslint_d", "biome-check", "prettier", stop_after_first = true },
 				typescriptreact = { "oxfmt", "eslint_d", "biome-check", "prettier", stop_after_first = true },
 				nix = { "nixfmt" },
-				json = { "biome", "prettier", stop_after_first = true },
+				json = { "oxfmt", "biome", "prettier", stop_after_first = true },
 				go = { "goimports", "gofmt" },
 				vue = { "biome", "prettier", stop_after_first = true },
 				latex = { "latexindent" },
