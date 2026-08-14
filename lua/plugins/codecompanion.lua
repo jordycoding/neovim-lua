@@ -38,7 +38,7 @@ return {
 						name = "qwen",
 						formatted_name = "Qwen",
 						env = {
-							url = "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+							url = "https://dashscope-intl.aliyuncs.com/compatible-mode",
 							api_key = "cmd: op read op://Private/Qwencloud/credential",
 						},
 					})
