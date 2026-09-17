@@ -44,6 +44,15 @@ return {
 					})
 				end,
 			},
+			acp = {
+				codex = function()
+					return require("codecompanion.adapters").extend("codex", {
+						defaults = {
+							auth_method = "chat-gpt", -- "api-key"|"chat-gpt"
+						},
+					})
+				end,
+			},
 		},
 	},
 	cmd = { "CodeCompanion", "CodeCompanionChat", "CodeCompanionCmd", "CodeCompanionActions" },
