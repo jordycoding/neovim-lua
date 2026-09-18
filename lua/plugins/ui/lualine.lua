@@ -51,6 +51,9 @@ return {
 					style = " %H:%M",
 					color = { gui = "italic,bold" },
 				},
+				{
+					require("plugins.codecompanion.utils.lualine"),
+				},
 			},
 		},
 	},

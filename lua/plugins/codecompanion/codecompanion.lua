@@ -64,4 +64,8 @@ return {
 			desc = "Toggle codecompanion chat",
 		},
 	},
+	config = function(_, opts)
+		require("codecompanion").setup(opts)
+		require("plugins.codecompanion.utils.extmarks").setup()
+	end,
 }

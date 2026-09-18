@@ -19,6 +19,7 @@ return require("lazy").setup({
 	{ import = "plugins.neotest" },
 	{ import = "plugins.qol" },
 	{ import = "plugins.treesitter" },
+	{ import = "plugins.codecompanion" },
 }, {
 	lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json", -- Config folder is readonly because of home manager
 })
