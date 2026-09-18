@@ -58,10 +58,22 @@ return {
 	cmd = { "CodeCompanion", "CodeCompanionChat", "CodeCompanionCmd", "CodeCompanionActions" },
 	keys = {
 		{
-			"<leader>Cc",
+			"<leader>cc",
 			"<cmd>CodeCompanionChat Toggle<cr>",
 			mode = { "n", "v" },
-			desc = "Toggle codecompanion chat",
+			desc = "Toggle CodeCompanion chat",
+		},
+		{
+			"<leader>ca",
+			"<cmd>CodeCompanionActions<cr>",
+			mode = { "n", "v" },
+			desc = "CodeCompanion actions",
+		},
+		{
+			"<leader>cA",
+			"<cmd>CodeCompanionChat Add<cr>",
+			mode = { "v" },
+			desc = "Add selection to CodeCompanion chat",
 		},
 	},
 	config = function(_, opts)
