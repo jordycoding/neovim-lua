@@ -1,9 +1,8 @@
-vim.lsp.enable("texlab")
 vim.lsp.config("texlab", {
 	settings = {
 		texlab = {
 			build = {
-				args = { "lualatex", "-interaction=nonstopmode", "-synctex=1", "%f" },
+				args = { "-lualatex", "-interaction=nonstopmode", "-synctex=1", "%f" },
 				executable = "latexmk",
 				forwardSearchAfter = true,
 				onSave = true,
@@ -15,3 +14,4 @@ vim.lsp.config("texlab", {
 		},
 	},
 })
+vim.lsp.enable("texlab")
