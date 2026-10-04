@@ -9,7 +9,7 @@ return {
 		},
 		lazy = false, -- neo-tree will lazily load itself
 		keys = {
-			{ "<leader>n", "<Cmd>Neotree<CR>", desc = "Toggle Neotree" },
+			{ "<leader>n", "<Cmd>Neotree toggle<CR>", desc = "Toggle Neotree" },
 		},
 		opts = {
 			window = {
