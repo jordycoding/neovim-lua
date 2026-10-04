@@ -6,6 +6,7 @@ return {
 
 		return {
 			options = {
+				globalstatus = true,
 				theme = "catppuccin-nvim",
 				section_separators = { left = "", right = "" },
 				component_separators = { left = "", right = "" },
