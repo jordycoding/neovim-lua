@@ -9,7 +9,7 @@ return {
 		---@type AutoSession.Config
 		opts = {
 			suppressed_dirs = { "~/Downloads" },
-			bypass_save_filetypes = { "NvimTree", "alpha" },
+			bypass_save_filetypes = { "neo-tree", "alpha" },
 			no_restore_cmds = {
 				function()
 					local file = vim.fn.expand("%:p")

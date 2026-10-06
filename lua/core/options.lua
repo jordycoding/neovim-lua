@@ -5,6 +5,8 @@ local opt = vim.opt
 -- General
 -----------
 opt.mouse = "a"
+-- Avoid interpreting source comments (e.g. "ex: printf(...)") as editor options.
+opt.modeline = false
 g.mapleader = " "
 
 -----------
