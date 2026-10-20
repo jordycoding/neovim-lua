@@ -27,6 +27,9 @@ return {
 		---@module "conform"
 		---@type conform.setupOpts
 		opts = {
+			default_format_opts = {
+				lsp_format = "fallback",
+			},
 			-- TODO: Remove when PR/Issue is closed https://github.com/stevearc/conform.nvim/issues/699
 			formatters = {
 				csharpier = function()
@@ -63,7 +66,7 @@ return {
 					end
 				end
 
-				return { timeout_ms = 200, lsp_fallback = true }, on_format
+				return { timeout_ms = 500, lsp_format = "fallback" }, on_format
 			end,
 
 			format_after_save = function(bufnr)
@@ -71,12 +74,22 @@ return {
 				if not slow_format_filetypes[vim.bo[bufnr].filetype] then
 					return
 				end
-				return { lsp_fallback = true }
+				return { lsp_format = "fallback" }
 			end,
 
 			formatters_by_ft = {
 				lua = { "stylua" },
-				python = { "black" },
+				python = function(bufnr)
+					local conform = require("conform")
+					local formatters = {}
+					for _, formatter in ipairs({ "ruff_organize_imports", "ruff_format" }) do
+						if conform.get_formatter_info(formatter, bufnr).available then
+							table.insert(formatters, formatter)
+						end
+					end
+					-- Use Black only when neither Ruff formatter is available.
+					return #formatters > 0 and formatters or { "black" }
+				end,
 				javascript = { "oxfmt", "eslint_d", "biome-check", "prettier", stop_after_first = true },
 				javascriptreact = { "oxfmt", "biome-check", "prettier", stop_after_first = true },
 				typescript = { "oxfmt", "eslint_d", "biome-check", "prettier", stop_after_first = true },
