@@ -27,6 +27,7 @@ local servers = {
 	"yamlls",
 	"qmlls",
 	"tailwindcss",
+	"tofu_ls",
 }
 for _, lsp in pairs(servers) do
 	vim.lsp.enable(lsp)
