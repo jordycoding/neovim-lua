@@ -26,8 +26,8 @@ vim.lsp.config("vtsls", {
 	},
 })
 
-vim.lsp.enable("tsgo")
-vim.lsp.config("tsgo", {
+vim.lsp.enable("tsc")
+vim.lsp.config("tsc", {
 	filetypes = {
 		"javascript",
 		"javascriptreact",
